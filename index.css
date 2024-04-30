@@ -47,6 +47,7 @@ body{
     padding: 0 45px;
     margin: 0 auto;
     color: #ffffff;
+    background-color: red;
 }
 .header-main .name-shop{
     letter-spacing: 7.5px;
@@ -67,18 +68,43 @@ body{
     align-items: center;
 }
 
-.menu{
-    
+.slide-content-main{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    /* z-index: -1; */
 }
-.page-main-content{
-    position: relative;
-    transform: translate3d(0);
-    transition-duration: 0ms;
-    z-index: -1;
-}
-.page-main-content .img-page{
-    padding-top: 54%;
-}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper-v {
+    background: #eee;
+  }
+  /* .swiper-button-next{
+    position: absolute;
+    top: 0;
+  } */
+
   
   
     
