@@ -1,0 +1,87 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Montserrat", monospace;
+  }
+  
+/*=============== Font chữ =====================*/
+/* .mot{
+    font-family: "Montserrat";
+    font-size: 50px;
+}
+.hai{
+    font-family: "Questrial";
+    font-size: 50px;
+} */
+body{
+    background-color: bisque;
+}
+.page-contain{
+    position: relative;
+}
+.page-contain .site-nav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.header-sale{
+    background-color: #000000;
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    padding: 0.45rem 0rem;
+}
+.header-sale a{
+    text-decoration: none;
+    color: #f3f3f3;
+}
+.header-main{
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    text-align: center;
+    align-items: center;
+    width: 95%;
+    padding: 0 45px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+.header-main .name-shop{
+    letter-spacing: 7.5px;
+}
+.header-main .name-shop a{
+    color: #ffffff;
+    text-decoration: none;
+}
+.header-funtion{
+    display: flex;
+    align-items: center;
+}
+.site-nav__link{
+    padding-left: 8px;
+    padding-right: 8px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.menu{
+    
+}
+.page-main-content{
+    position: relative;
+    transform: translate3d(0);
+    transition-duration: 0ms;
+    z-index: -1;
+}
+.page-main-content .img-page{
+    padding-top: 54%;
+}
+  
+  
+    
+    
+    
+  
