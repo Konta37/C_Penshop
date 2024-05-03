@@ -22,6 +22,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <!-- ================ icon web================= -->
     <meta name="theme-color" content="#f01737" />
   </head>
@@ -38,7 +42,57 @@
           </div>
           <div class="header-main">
             <div class="menu">
-              <ion-icon name="menu" class="site-nav__link"></ion-icon>
+              <input type="checkbox"  class="menu_input"  id="check">
+              <label for="check">
+                <ion-icon name="menu" class="site-nav__link"></ion-icon>
+              </label>
+              <div class="menu-side-bar">
+                <div class="draw-title">
+                  <div class="menu-search">
+                    <form action="" class="search-form">
+                      <div class="search_input_wrap">
+                        <input type="search" name="" id="" placeholder="Search...">
+                        <p class="search-clear">CLEAR</p>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="draw-title-close">
+                    <label for="check">
+                      <ion-icon name="close-outline" class="site-nav__link_close"></ion-icon>
+                    </label>
+                  </div>
+                </div>
+                <ul class="moblie-gender_nav">
+                  <li class="mobile-gender__item mobile-nav man active">Men</li>
+                  <li class="mobile-gender__item mobile-nav woman">Woman</li>
+                </ul>
+                <div class="drawer__scrollable">
+                  <div class="accountmenu__container">
+                    <p class="accountmenu__heading">Shopping is now made easier, try shop online and pick up in-store!</p>
+                    <div class="accountmenu__buttons">
+                      <button class="accountmenu">REGISTER NOW</button>
+                      <button class="accountmenu">LOG IN</button>
+                    </div>
+                  </div>
+                  <ul class="mobile-nav men">
+                    <li>NEW ARRIVALS</li>
+                    <li>BEST SELLERS</li>
+                    <li>SHOP BY COLLECTION</li>
+                    <li>SHOP BY OCCASION</li>
+                    <li>TOPS</li>
+                    <li>BOTTOMS</li>
+                    <li>INNERWEAR</li>
+                    <li>LOUNGEWEAR</li>
+                    <li>FOOTWEAR</li>
+                    <li>ACCESSORIES</li>
+                    <li>PERSONAL CARE</li>
+                    <li>SALE</li>
+                    <li>ALL ITEMS</li>
+                    <li>BULK ORDER</li>
+                    <li>LOG IN</li>
+                  </ul>
+                </div>
+              </div>
             </div>
             <div class="name-shop">
               <a href="#"><b>KONTA</b></a>
@@ -51,7 +105,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div>  
       </div>
     </header>
     <main>
@@ -67,24 +121,40 @@
                       src="./image/DESKTOP_1910x835_1c131e6c-2fe3-49aa-8f97-1e033a3f367b.webp"
                       alt=""
                     />
+                    <div class="btn-marvel-main">
+                      <a href="#" class="btn-marvel">SHOP NOW</a>
+                      <i class='bx bx-right-arrow-alt arrow'></i>
+                    </div>
                   </div>
                   <div class="swiper-slide">
                     <img
                       src="./image/DOTCOM_DESKTOP_-_1920X973_3ec71c24-b64d-4b8b-bb4c-656cef3f3661.webp"
                       alt=""
                     />
+                    <div class="btn-marvel-main">
+                      <a href="#" class="btn-marvel">SHOP NOW</a>
+                      <i class='bx bx-right-arrow-alt arrow'></i>
+                    </div>
                   </div>
                   <div class="swiper-slide">
                     <img
                       src="./image/PEN_EASY_IN_LINEN_LIFESTYLE-MEN_DESKTOP_e636900e-ab52-4cf4-9b03-a8df527827d3.webp"
                       alt=""
                     />
+                    <div class="btn-marvel-main">
+                      <a href="#" class="btn-marvel">SHOP NOW</a>
+                      <i class='bx bx-right-arrow-alt arrow'></i>
+                    </div>
                   </div>
                   <div class="swiper-slide">
                     <img
                       src="./image/PEN_Q1_SWIM_BANNERS-MEN_DESKTOP_1d6f8df6-a116-4a46-b485-f78b62c1579e.webp"
                       alt=""
                     />
+                    <div class="btn-marvel-main">
+                      <a href="#" class="btn-marvel">SHOP NOW</a>
+                      <i class='bx bx-right-arrow-alt arrow'></i>
+                    </div>
                   </div>
                   <div class="swiper-slide last-swiper">
                     <div swiper-info-content>
@@ -129,7 +199,10 @@
                           </div>
                           <div class="perks-items">
                             <a href="#">
-                              <box-icon type="solid" name="store-alt" ></box-icon>
+                              <box-icon
+                                type="solid"
+                                name="store-alt"
+                              ></box-icon>
                               <p>30 DAY HASSLE-FREE EXCHANGES IN STORE</p>
                             </a>
                           </div>
@@ -148,10 +221,18 @@
                         </div>
                         <div class="footer-custom-block">
                           <ul class="footer-policies">
-                            <li class="footer-policies-link"><a href="#">About Us</a></li>
-                            <li class="footer-policies-link"><a href="#">FAQs</a></li>
-                            <li class="footer-policies-link"><a href="#">Pick-up in Store</a></li>
-                            <li class="footer-policies-link"><a href="#">Privacy Policy</a></li>
+                            <li class="footer-policies-link">
+                              <a href="#">About Us</a>
+                            </li>
+                            <li class="footer-policies-link">
+                              <a href="#">FAQs</a>
+                            </li>
+                            <li class="footer-policies-link">
+                              <a href="#">Pick-up in Store</a>
+                            </li>
+                            <li class="footer-policies-link">
+                              <a href="#">Privacy Policy</a>
+                            </li>
                             <li><a href="#">Terms of Service</a></li>
                           </ul>
                         </div>
@@ -170,24 +251,40 @@
                       src="./image/PEN_Q1-DISNEY_DOTCOM_DESKTOP.webp"
                       alt=""
                     />
+                    <div class="btn-marvel-main">
+                      <a href="#" class="btn-marvel">SHOP NOW</a>
+                      <i class='bx bx-right-arrow-alt arrow'></i>
+                    </div>
                   </div>
                   <div class="swiper-slide">
                     <img
                       src="./image/PEN_Q1_GYJ_DOTCOM-4_b33a4848-ad84-40da-8588-6aadcaa61426.webp"
                       alt=""
                     />
+                    <div class="btn-marvel-main">
+                      <a href="#" class="btn-marvel">SHOP NOW</a>
+                      <i class='bx bx-right-arrow-alt arrow'></i>
+                    </div>
                   </div>
                   <div class="swiper-slide">
                     <img
                       src="./image/PEN_EASY_IN_LINEN_LIFESTYLE-WOMEN_DESKTOP_91c14ec8-63d1-4710-b8bd-05007da63530.webp"
                       alt=""
                     />
+                    <div class="btn-marvel-main">
+                      <a href="#" class="btn-marvel">SHOP NOW</a>
+                      <i class='bx bx-right-arrow-alt arrow'></i>
+                    </div>
                   </div>
                   <div class="swiper-slide">
                     <img
                       src="./image/PEN_Q1_SWIM_BANNERS-WOMEN_DESKTOP_2aa506be-8462-43f8-b2a4-a11d88fe5284.webp"
                       alt=""
                     />
+                    <div class="btn-marvel-main">
+                      <a href="#" class="btn-marvel">SHOP NOW</a>
+                      <i class='bx bx-right-arrow-alt arrow'></i>
+                    </div>
                   </div>
                   <div class="swiper-slide last-swiper">
                     <div swiper-info-content>
@@ -232,7 +329,10 @@
                           </div>
                           <div class="perks-items">
                             <a href="#">
-                              <box-icon type="solid" name="store-alt" ></box-icon>
+                              <box-icon
+                                type="solid"
+                                name="store-alt"
+                              ></box-icon>
                               <p>30 DAY HASSLE-FREE EXCHANGES IN STORE</p>
                             </a>
                           </div>
@@ -251,10 +351,18 @@
                         </div>
                         <div class="footer-custom-block">
                           <ul class="footer-policies">
-                            <li class="footer-policies-link"><a href="#">About Us</a></li>
-                            <li class="footer-policies-link"><a href="#">FAQs</a></li>
-                            <li class="footer-policies-link"><a href="#">Pick-up in Store</a></li>
-                            <li class="footer-policies-link"><a href="#">Privacy Policy</a></li>
+                            <li class="footer-policies-link">
+                              <a href="#">About Us</a>
+                            </li>
+                            <li class="footer-policies-link">
+                              <a href="#">FAQs</a>
+                            </li>
+                            <li class="footer-policies-link">
+                              <a href="#">Pick-up in Store</a>
+                            </li>
+                            <li class="footer-policies-link">
+                              <a href="#">Privacy Policy</a>
+                            </li>
                             <li><a href="#">Terms of Service</a></li>
                           </ul>
                         </div>

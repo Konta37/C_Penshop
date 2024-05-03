@@ -1,9 +1,16 @@
 var swiper2 = new Swiper(".mySwiper2", {
   direction: "vertical",
-  // freeMode: true,
       scrollbar: {
         el: ".swiper-scrollbar",
       },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      // autoplay: {
+      //   delay: 3000,
+      //   disableOnInteraction: false,
+      // },  
       mousewheel: true,
 });
 var swiper3 = new Swiper(".mySwiper", {
