@@ -73,23 +73,415 @@
                       <button class="accountmenu">REGISTER NOW</button>
                       <button class="accountmenu">LOG IN</button>
                     </div>
+                    <hr>
                   </div>
                   <ul class="mobile-nav men">
-                    <li>NEW ARRIVALS</li>
-                    <li>BEST SELLERS</li>
-                    <li>SHOP BY COLLECTION</li>
-                    <li>SHOP BY OCCASION</li>
-                    <li>TOPS</li>
-                    <li>BOTTOMS</li>
-                    <li>INNERWEAR</li>
-                    <li>LOUNGEWEAR</li>
-                    <li>FOOTWEAR</li>
-                    <li>ACCESSORIES</li>
-                    <li>PERSONAL CARE</li>
-                    <li>SALE</li>
-                    <li>ALL ITEMS</li>
-                    <li>BULK ORDER</li>
-                    <li>LOG IN</li>
+                    <li class="mobile-nav__item"><a href="./Link_Product/Collections/men-new-arrivals.html" class="mobile-nav__link">NEW ARRIVALS</a></li>
+                    <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">BEST SELLERS</a></li>
+                    <!-- <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">SHOP BY COLLECTION</a></li> -->
+                    <li class="mobile-nav__item">
+                      <div class="mobile-nav__has-sublist" onclick="dropDownList()">
+                        <button type="button" class="mobile-nav__link--button">
+                          <span class="mobile-nav__faux-link ">SHOP BY COLLECTION</span>
+                          <div class="mobile-nav__toggle">
+                            <span class="collapsible-trigger__icon">
+                              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg>
+                            </span>
+                          </div>
+                        </button>
+                      </div>
+                      <div id="Linklist-1" class="mobile-nav__sublist collapsible-content collapsible-content--all is-open">
+                        <div class="collapsible-content__inner">
+                          <ul class="mobile-nav__sublist_member">
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">MARVEL|KONTA</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">EASY IN LINEN</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">KONTA SWIM</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">SUMMER DREAMS</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">BACK TO BASICS</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">DRESS CODE</a>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="mobile-nav__item">
+                      <div class="mobile-nav__has-sublist" onclick="dropDownList2()">
+                        <button type="button" class="mobile-nav__link--button">
+                          <span class="mobile-nav__faux-link ">SHOP BY OCCASION</span>
+                          <div class="mobile-nav__toggle">
+                            <span class="collapsible-trigger__icon">
+                              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg>
+                            </span>
+                          </div>
+                        </button>
+                      </div>
+                      <div id="Linklist-2" class="mobile-nav__sublist collapsible-content collapsible-content--all is-open">
+                        <div class="collapsible-content__inner">
+                          <ul class="mobile-nav__sublist_member">
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">MARVEL|KONTA</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">EASY IN LINEN</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">KONTA SWIM</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">SUMMER DREAMS</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">BACK TO BASICS</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">DRESS CODE</a>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">SHOP BY OCCASION</a></li> -->
+                    <li class="mobile-nav__item">
+                      <div class="mobile-nav__has-sublist" onclick="dropDownList3()">
+                        <button type="button" class="mobile-nav__link--button">
+                          <span class="mobile-nav__faux-link ">TOPS</span>
+                          <div class="mobile-nav__toggle">
+                            <span class="collapsible-trigger__icon">
+                              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg>
+                            </span>
+                          </div>
+                        </button>
+                      </div>
+                      <div id="Linklist-3" class="mobile-nav__sublist collapsible-content collapsible-content--all is-open">
+                        <div class="collapsible-content__inner">
+                          <ul class="mobile-nav__sublist_member">
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">MARVEL|KONTA</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">EASY IN LINEN</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">KONTA SWIM</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">SUMMER DREAMS</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">BACK TO BASICS</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">DRESS CODE</a>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">TOPS</a></li> -->
+                    <li class="mobile-nav__item">
+                      <div class="mobile-nav__has-sublist" onclick="dropDownList4()">
+                        <button type="button" class="mobile-nav__link--button">
+                          <span class="mobile-nav__faux-link ">BOTTOMS</span>
+                          <div class="mobile-nav__toggle">
+                            <span class="collapsible-trigger__icon">
+                              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg>
+                            </span>
+                          </div>
+                        </button>
+                      </div>
+                      <div id="Linklist-4" class="mobile-nav__sublist collapsible-content collapsible-content--all is-open">
+                        <div class="collapsible-content__inner">
+                          <ul class="mobile-nav__sublist_member">
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">MARVEL|KONTA</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">EASY IN LINEN</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">KONTA SWIM</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">SUMMER DREAMS</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">BACK TO BASICS</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">DRESS CODE</a>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">BOTTOMS</a></li> -->
+                    <li class="mobile-nav__item">
+                      <div class="mobile-nav__has-sublist" onclick="dropDownList5()">
+                        <button type="button" class="mobile-nav__link--button">
+                          <span class="mobile-nav__faux-link ">INNERWEAR</span>
+                          <div class="mobile-nav__toggle">
+                            <span class="collapsible-trigger__icon">
+                              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg>
+                            </span>
+                          </div>
+                        </button>
+                      </div>
+                      <div id="Linklist-5" class="mobile-nav__sublist collapsible-content collapsible-content--all is-open">
+                        <div class="collapsible-content__inner">
+                          <ul class="mobile-nav__sublist_member">
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">MARVEL|KONTA</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">EASY IN LINEN</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">KONTA SWIM</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">SUMMER DREAMS</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">BACK TO BASICS</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">DRESS CODE</a>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">INNERWEAR</a></li> -->
+                    <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">LOUNGEWEAR</a></li>
+                    <!-- <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">FOOTWEAR</a></li> -->
+                    <li class="mobile-nav__item">
+                      <div class="mobile-nav__has-sublist" onclick="dropDownList6()">
+                        <button type="button" class="mobile-nav__link--button">
+                          <span class="mobile-nav__faux-link ">FOOTWEAR</span>
+                          <div class="mobile-nav__toggle">
+                            <span class="collapsible-trigger__icon">
+                              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg>
+                            </span>
+                          </div>
+                        </button>
+                      </div>
+                      <div id="Linklist-6" class="mobile-nav__sublist collapsible-content collapsible-content--all is-open">
+                        <div class="collapsible-content__inner">
+                          <ul class="mobile-nav__sublist_member">
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">MARVEL|KONTA</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">EASY IN LINEN</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">KONTA SWIM</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">SUMMER DREAMS</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">BACK TO BASICS</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">DRESS CODE</a>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">ACCESSORIES</a></li> -->
+                    <li class="mobile-nav__item">
+                      <div class="mobile-nav__has-sublist" onclick="dropDownList7()">
+                        <button type="button" class="mobile-nav__link--button">
+                          <span class="mobile-nav__faux-link ">ACCESSORIES</span>
+                          <div class="mobile-nav__toggle">
+                            <span class="collapsible-trigger__icon">
+                              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg>
+                            </span>
+                          </div>
+                        </button>
+                      </div>
+                      <div id="Linklist-7" class="mobile-nav__sublist collapsible-content collapsible-content--all is-open">
+                        <div class="collapsible-content__inner">
+                          <ul class="mobile-nav__sublist_member">
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">MARVEL|KONTA</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">EASY IN LINEN</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">KONTA SWIM</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">SUMMER DREAMS</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">BACK TO BASICS</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">DRESS CODE</a>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">PERSONAL CARE</a></li> -->
+                    <li class="mobile-nav__item">
+                      <div class="mobile-nav__has-sublist" onclick="dropDownList8()">
+                        <button type="button" class="mobile-nav__link--button">
+                          <span class="mobile-nav__faux-link ">PERSONAL CARE</span>
+                          <div class="mobile-nav__toggle">
+                            <span class="collapsible-trigger__icon">
+                              <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-chevron-down" viewBox="0 0 28 16"><path d="M1.57 1.59l12.76 12.77L27.1 1.59" stroke-width="2" stroke="#000" fill="none" fill-rule="evenodd"></path></svg>
+                            </span>
+                          </div>
+                        </button>
+                      </div>
+                      <div id="Linklist-8" class="mobile-nav__sublist collapsible-content collapsible-content--all is-open">
+                        <div class="collapsible-content__inner">
+                          <ul class="mobile-nav__sublist_member">
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">MARVEL|KONTA</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">EASY IN LINEN</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">KONTA SWIM</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">SUMMER DREAMS</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">BACK TO BASICS</a>
+                              </div>
+                            </li>
+                            <li class="mobile-nav__item">
+                              <div class="mobile-nav__child-item">
+                                <a href="#" class="mobile-nav__link">DRESS CODE</a>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="mobile-nav__item"><a href="#" class="mobile-nav__link" style="color: #f01737; font-weight: 800;">SALE</a></li>
+                    <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">ALL ITEMS</a></li>
+                    <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">BULK ORDER</a></li>
+                    <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">LOG IN</a></li>
+                  </ul>
+                  <!-- <ul class="woman"></ul> -->
+                  <ul class="mobile-additional__menu">
+                    <li class="mobile-additional__item"><a href="#" class="mobile-nav__item">SHOP KONTA INTERNATIONAL</a></li>
+                    <li class="mobile-additional__item"><a href="#" class="mobile-nav__item">KONTA X GO YOON JUNG</a></li>
+                    <li class="mobile-additional__item"><a href="#" class="mobile-nav__item">CONTACT US</a></li>
+                    <li class="mobile-additional__item"><a href="#" class="mobile-nav__item">KONTA ACHIVE</a></li>
                   </ul>
                 </div>
               </div>
