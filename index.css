@@ -355,6 +355,7 @@ hr {
 /* ================headermain======================= */
 .header-main .name-shop {
   letter-spacing: 7.5px;
+  padding-left: 5rem;
 }
 .header-main .name-shop a {
   color: #ffffff;
