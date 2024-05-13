@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./register.css" />
+    <link rel="stylesheet" href="./admin.css" />
 
     <link
       rel="stylesheet"
@@ -810,76 +810,164 @@
       </div>
     </header>
     <body>
-        <div class="main-content">
-            <div class="gird">
-                <div class="grid__item medium-up--one-third medium-up--push-one-third">
-                    <header class="section-header">
-                        <h1 class="section-header__title">Create Account</h1>
-                    </header>
-                    <div class="form-vertical">
-                       <form action="" id="CustomerRegisterForm">
-                        <div class="gird cf-name">
-                            <div class="cf-first-name">
-                                <label for="">FIRST NAME *</label>
-                                <input type="text" id="CustomerFirstName" placeholder="John">
-                                <ul class="cf-error">
-                                    <li>Must not be blank</li>
-                                    <li>First name must be letters only</li>
-                                    <li>First name must be more than 1 character</li>
-                                </ul>
-                            </div>
-                            <div class="cf-last-name">
-                                <label for="">LAST NAME *</label>
-                                <input type="text" id="CustomerLastName" placeholder="Doe">
-                                <ul class="cf-error">
-                                    <li>Must not be blank</li>
-                                    <li>First name must be letters only</li>
-                                    <li>First name must be more than 1 character</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="gird cf-email">
-                            <label for="">EMAIL *</label>
-                            <input type="email" id="CustomerEmail" placeholder="email@gmail.com">
-                            <ul class="cf-error">
-                                <li>Must not be blank</li>
-                            </ul>
-                        </div>
-                        <div class="gird cf-mobile">
-                            <label for="">EMAIL *</label>
-                            <input type="tel" id="CustomerMoblie" placeholder="+63900123123">
-                        </div>
-                        <div class="gird cf-birthday">
-                            <label for="">BIRTHDAY *</label>
-                            <input type="date" id="CustomerBirthday" placeholder="MM-DD-YYYY">
-                            <ul class="cf-error">
-                                <li>Must not be blank</li>
-                                <li>Minimum age requirement to register is 13 years old.</li>
-                                <li>Maximum age requirement to register is 80 years old.</li>
-                            </ul>
-                        </div>
-                        <div class="gird cf-gender">
-                            <label for="">Gender *</label>
-                            <div class="cf-gender-type">
-                                <input type="radio" id="male" value="male">
-                                <label for="">MALE</label>
-                                <input type="radio" id="female" value="female">
-                                <label for="">FEMALE</label>
-                                <input type="radio" id="otherG" value="other">
-                                <label for="">PREFER NOT TO SAY</label>
-                            </div>
-                        </div>
-                        <div class="gird cf-btn-actions">
-                            <button type="button" class="cf-cancel cf-btn"><a href="./login.html">Cancel</a></button>
-                            <button type="submit" class="cf-submit-form cf-btn">Create account</button>
-                        </div>
-                       </form> 
-                    </div>
-                </div>
-            </div>
+      <div class="main-content">
+        <!-- all in -->
+        <div
+          id="toastify"
+          style="
+            width: 310px;
+            background-color: red;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            overflow: hidden;
+            border-radius: 4px;
+            z-index: 999;
+          "
+          class="hidden"
+        >
+          <p
+            id="toastify-message"
+            style="text-align: justify; color: white"
+          ></p>
         </div>
-    </body>
 
+        <section id="form-scope" class="hidden">
+          <form class="form-product" onsubmit="submitForm(event)">
+            <h4 style="text-align: center">Product</h4>
+            <div class="scope-input">
+              <label for="name" class="label-product">Name: </label>
+              <input id="name" name="name" type="text" />
+            </div>
+            <div class="scope-input">
+              <label for="price" class="label-product">Price: </label>
+              <input id="price" name="price" type="number" min="1" />
+            </div>
+            <div class="scope-input">
+              <label for="quantity" class="label-product">Quantity: </label>
+              <input id="quantity" name="quantity" type="number" min="1" />
+            </div>
+            <div class="scope-input">
+              <label for="category" class="label-product">Quantity: </label>
+              <select name="category">
+                <option value="Laptop">Laptop</option>
+                <option value="Mobile">Mobile</option>
+                <option value="Loudspeaker">Loudspeaker</option>
+              </select>
+            </div>
+            <div class="scope-input">
+              <label for="description" class="label-product"
+                >Description:
+              </label>
+              <textarea
+                name="description"
+                id="description"
+                cols="20"
+                rows="10"
+              ></textarea>
+            </div>
+            <div class="scope-input">
+              <label for="input-image" class="label-product pointer"
+                >Image:
+              </label>
+              <!-- <input
+                id="input-image"
+                type="file"
+                accept="image/*"
+                hidden
+                onchange="convertToBase64()"
+              /> -->
+              <input
+                id="input-image"
+                type="file"
+                accept="image/*"
+                onchange="convertToBase64()"
+              />
+              <img id="image-product" width="100px" src="" alt="img" />
+            </div>
+            <div style="display: flex; justify-content: center; gap: 12px">
+              <button type="button" onclick="closeForm()">Cancel</button>
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+        </section>
+
+        <main style="width: 1200px; margin: 0 auto">
+          <section id="action" style="padding-top: 48px">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <div>
+                <button onclick="openForm()">Add</button>
+              </div>
+              <div>
+                <span>Select: </span>
+                <select name="category" onchange="changeCategory(event)">
+                  <option value="All">All</option>
+                  <option value="Laptop">Laptop</option>
+                  <option value="Mobile">Mobile</option>
+                  <option value="Loudspeaker">Loudspeaker</option>
+                </select>
+              </div>
+              <div>
+                <input type="text" onchange="changeTextSearch(event)" />
+                <button onclick="render()">Search</button>
+              </div>
+            </div>
+          </section>
+          <section id="table">
+            <table>
+              <caption style="font-weight: bold; font-size: 20px; margin: 12px">
+                Products table
+              </caption>
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Image</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Description</th>
+                  <th>Category</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="tbody"></tbody>
+            </table>
+          </section>
+          <section
+            id="pagination"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: end;
+              gap: 24px;
+            "
+          >
+            <div>
+              <select name="" id="" onchange="changePageSize(event)">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+              </select>
+            </div>
+            <div
+              style="display: flex; justify-content: end; align-items: center"
+            >
+              <button onclick="changePage(-1)">Previous</button>
+              <p id="page-list"></p>
+              <button onclick="changePage(1)">Next</button>
+            </div>
+          </section>
+        </main>
+      </div>
+    </body>
 
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script
@@ -891,6 +979,6 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./register.js"></script>
+    <script src="./admin.js"></script>
   </body>
 </html>

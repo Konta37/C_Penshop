@@ -413,92 +413,94 @@
   }
   
   /* ========================================Main content=======================*/
-  .gird {
-    max-width: 100%;
-    /* padding-top: 60px;
-    padding-bottom: 60px;
-    padding: 0 40px;
-    margin: 0 auto; */
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    /* margin-left: -30px; */
-    font-size: var(--typeBaseSize);
+  
+  input,
+  button,
+  textarea,
+  option,
+  select {
+      outline: none;
+      padding: 5px 10px;
   }
   
-  .medium-up--one-third {
-    position: relative;
-    padding: 0 30%;
+  textarea {
+      resize: none;
   }
-  .section-header {
-    margin-top: 28px;
-    margin-bottom: 48px;
-    text-align: center;
-    /* width: 33.33333%; */
+  
+  button {
+      cursor: pointer;
   }
-  .section-header__title {
-    font-size: var(--typeHeaderSize);
+  
+  #form-scope {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      padding-top: 48px;
+      height: 100vh;
+      background-color: none;
+      background-color: #c7bebeaf;
   }
-
-
-  .gird{
-    display: grid;
-    grid-template-columns: auto;
-    padding: 8px 16px;
+  
+  .hidden {
+      display: none !important;
   }
-  .cf-name{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 16px;
+  
+  .label-product {
+      display: inline-block;
+      min-width: 100px;
   }
-  .cf-first-name,.cf-last-name{
-    display: grid;
-    grid-template-rows: auto auto;
+  
+  .scope-input {
+      margin: 10px 0;
   }
-
-  .cf-btn-actions{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 16px;
-    margin-top: 24px;
+  
+  .form-product {
+      width: 400px;
+      background-color: white;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #333;
+      box-shadow: 1px 1px 1px 1px #999;
+      height: fit-content;
   }
-  .cf-error{
-    
+  
+  .pointer {
+      cursor: pointer;
   }
-  .cf-error {
-    margin: 8px 0 0 2px ;
-    padding: 0 ;
-    display: none;
+  
+  table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 56px 0;
   }
-  .cf-error li{
-    list-style: none;
-    text-align: left;
-    padding: 0;
-    margin: 0 0 0.5em;
-    color: #ce2525;
+  
+  table,
+  th,
+  td {
+      border: 1px solid;
   }
-  .cf-btn{
-    background-color: #f01737;
-    border: none;
-    color: #ffffff;
-    padding: 11px 20px;
-    font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
-    font-weight: var(--typeHeaderWeight);
-    letter-spacing: var(--typeHeaderSpacing);
-    cursor: pointer;
+  
+  .page-item {
+      display: inline-block;
+      margin: 0 4px;
+      padding: 5px;
+      border-radius: 50%;
+      border: 1px solid #999;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      text-align: center;
   }
-  .cf-cancel a{
-    text-decoration: none;
-    color: #ffffff;
+  
+  .page-active {
+      background-color: blue;
   }
-  .gird label{
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    font-weight: var(--typeHeaderWeight);
-    margin-bottom: 8px;
-  }
-  .cf-gender-type label{
-    margin-right: 16px;
+  
+  .page-item:hover {
+      background-color: aqua;
   }
   :root {
     --typeHeaderPrimary: Montserrat;

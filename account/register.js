@@ -33,4 +33,7 @@ function dropDownList() {
   }
 
   //check condition in input "Create Acount"
-  
+  // let btnCancel = document.getElementsByClassName("cf-cancel");
+  // btnCancel.onclick = function(){
+  //   window.location = `./login.html`
+  // }

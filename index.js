@@ -1,17 +1,17 @@
 var swiper2 = new Swiper(".mySwiper2", {
   direction: "vertical",
-      scrollbar: {
-        el: ".swiper-scrollbar",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      // autoplay: {
-      //   delay: 3000,
-      //   disableOnInteraction: false,
-      // },  
-      mousewheel: true,
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  // autoplay: {
+  //   delay: 3000,
+  //   disableOnInteraction: false,
+  // },
+  mousewheel: true,
 });
 var swiper3 = new Swiper(".mySwiper", {
   navigation: {
@@ -52,4 +52,15 @@ function dropDownList7() {
 function dropDownList8() {
   // document.getElementById("Linklist-3").classList.toggle("showMenu");
   document.getElementById("Linklist-8").classList.toggle("showMenu");
+}
+
+//change selected menu
+
+function activeBody() {
+  const changeGenderPage =
+    document.getElementsByClassName(`mobile-gender__item`);
+  console.log(changeGenderPage);
+  for (const item of changeGenderPage) {
+    item.classList.toggle("active");
+  }
 }
