@@ -140,29 +140,47 @@
   }
   .draw-title {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     height: 95px;
     padding-left: 25px;
     padding-right: 25px;
   }
-
+  .menu-search {
+    height: 40px;
+    width: 260px;
+    font-size: 24px;
+  }
+  .search-form {
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    border-radius: 0;
+  }
+  .search_input_wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+  }
+  .search_input_wrap input {
+    width: 100%;
+    border: none;
+    background-color: #f0f0f0;
+    padding: 0 10px;
+  }
+  .search-clear {
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    color: black;
+    font-size: 10px;
+  }
   .draw-title-close {
     color: black;
   }
-  .page-name-content{
-    font-weight: 700;
-    font-size: var(--typeHeaderSize);
-  }
-  .logo-wrap{
-    background-image: url("../image/Logo/main-logo.jpg");
-    height: 48px;
-    width: 48px;
-    /* background-position: center; */
-    background-size: cover;
-  }
   
-  /* ==========================main menu============ */
+  /* ==========================man menu============ */
   .moblie-gender_nav {
     color: black;
     display: flex;
@@ -483,53 +501,6 @@
   
   .page-item:hover {
       background-color: aqua;
-  }
-
-  .main-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 24px 86px;
-  }
-  .table-name-content{
-    font-weight: var(--typeHeaderWeight);
-    letter-spacing: var(--typeBaseSpacing);
-    line-height: var(--typeBaseLineHeight);
-    font-size: var(--typeHeaderSize);
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
-    text-rendering: optimizeSpeed;
-  }
-  .table-search {
-    height: 40px;
-    width: 320px;
-    font-size: 24px;
-  }
-  .search-form {
-    width: 100%;
-    height: 100%;
-    background-color: #f0f0f0;
-    border-radius: 0;
-  }
-  .search_input_wrap {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    position: relative;
-  }
-  .search_input_wrap input {
-    width: 100%;
-    border: none;
-    background-color: #f0f0f0;
-    padding: 0 10px;
-  }
-  .search-clear {
-    position: absolute;
-    top: 0.8rem;
-    right: 1rem;
-    color: black;
-    font-size: 10px;
-    cursor: pointer;
   }
   :root {
     --typeHeaderPrimary: Montserrat;
