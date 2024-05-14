@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./register.css" />
+    <link rel="stylesheet" href="./css/login.css" />
 
     <link
       rel="stylesheet"
@@ -814,69 +814,45 @@
             <div class="gird">
                 <div class="grid__item medium-up--one-third medium-up--push-one-third">
                     <header class="section-header">
-                        <h1 class="section-header__title">Create Account</h1>
+                        <h1 class="section-header__title">Login</h1>
                     </header>
-                    <div class="form-vertical">
-                       <form action="" id="CustomerRegisterForm">
-                        <div class="gird cf-name">
-                            <div class="cf-first-name">
-                                <label for="">FIRST NAME *</label>
-                                <input type="text" id="CustomerFirstName" placeholder="John">
-                                <ul class="cf-error">
-                                    <li>Must not be blank</li>
-                                    <li>First name must be letters only</li>
-                                    <li>First name must be more than 1 character</li>
-                                </ul>
+                    <div id="CustomerLoginForm">
+                        <form action="" id="customer_login">
+                            <label for="CustomerEmail">Email</label>
+                            <input type="email" name="customer[email]" id="CustomerEmail" class="input-full">
+                            <div class="gird">
+                                <div class="grid__item one-half">
+                                    <label for="CustomerPassword">Password</label>
+                                </div>
+                                <div class="grid__item one-half text-right">
+                                    <small class="label-info">
+                                        <a href="#"  id="RecoverPassword" class="">
+                                            Forgot?
+                                          </a>
+                                    </small>
+                                </div>
                             </div>
-                            <div class="cf-last-name">
-                                <label for="">LAST NAME *</label>
-                                <input type="text" id="CustomerLastName" placeholder="Doe">
-                                <ul class="cf-error">
-                                    <li>Must not be blank</li>
-                                    <li>First name must be letters only</li>
-                                    <li>First name must be more than 1 character</li>
-                                </ul>
+                            <div class="show-hide-password-container">
+                                <input type="password" value name="customer[password]" id="CustomerPassword" class="input-full">
+                                <ion-icon name="eye-outline"></ion-icon>
                             </div>
-                        </div>
-                        <div class="gird cf-email">
-                            <label for="">EMAIL *</label>
-                            <input type="email" id="CustomerEmail" placeholder="email@gmail.com">
-                            <ul class="cf-error">
-                                <li>Must not be blank</li>
-                            </ul>
-                        </div>
-                        <div class="gird cf-mobile">
-                            <label for="">EMAIL *</label>
-                            <input type="tel" id="CustomerMoblie" placeholder="+63900123123">
-                        </div>
-                        <div class="gird cf-birthday">
-                            <label for="">BIRTHDAY *</label>
-                            <input type="date" id="CustomerBirthday" placeholder="MM-DD-YYYY">
-                            <ul class="cf-error">
-                                <li>Must not be blank</li>
-                                <li>Minimum age requirement to register is 13 years old.</li>
-                                <li>Maximum age requirement to register is 80 years old.</li>
-                            </ul>
-                        </div>
-                        <div class="gird cf-gender">
-                            <label for="">Gender *</label>
-                            <div class="cf-gender-type">
-                                <input type="radio" id="male" value="male">
-                                <label for="">MALE</label>
-                                <input type="radio" id="female" value="female">
-                                <label for="">FEMALE</label>
-                                <input type="radio" id="otherG" value="other">
-                                <label for="">PREFER NOT TO SAY</label>
-                            </div>
-                        </div>
-                        <div class="gird cf-btn-actions">
-                            <button type="button" class="cf-cancel cf-btn"><a href="./login.html">Cancel</a></button>
-                            <button type="submit" class="cf-submit-form cf-btn">Create account</button>
-                        </div>
-                       </form> 
+                            <p>
+                                <!-- <label for="login-sign-in-submit" class="hidden-label">Sign In</label> -->
+                                <input type="submit" id="login-sign-in-submit" class="btn btn--full btn--no-animate" value="Sign In">
+                            </p>
+                            <p class="account-register__link">
+                                <a href="./register.html" id="customer_register_link">Create account</a>
+                            </p>
+                        </form>
                     </div>
+                    <div id="RecoverPasswordForm" class="hide"></div>
                 </div>
             </div>
+            <hr>
+            <p class="text-center no-margin-bottom rte">Still having trouble? Activate your account
+             <a href="#">here</a> 
+             .
+            </p>
         </div>
     </body>
 
@@ -891,6 +867,6 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./register.js"></script>
+    <script src="./js/login.js"></script>
   </body>
 </html>

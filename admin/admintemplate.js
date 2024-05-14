@@ -53,6 +53,7 @@ function dropDownList() {
   
   let textSearch = "";
   let categoryFilter = "All";
+  let idUpdate = null;
   function openForm() {
     formScopeHTML.classList.remove(`hidden`);
   }
@@ -263,5 +264,10 @@ function dropDownList() {
       return false;
     }
     return check;
+  }
+  function initUpdate(id){
+    idUpdate = id;
+    const products = JSON.parse(localStorage.getItem(PRODUCTS))||[]
+    const productUpdate = products.find(product => product.id ==id)
   }
   

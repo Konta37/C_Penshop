@@ -413,7 +413,7 @@
       cursor: pointer;
   }
   
-  #form-scope {
+  .form-add-el {
       position: fixed;
       top: 0;
       left: 0;
@@ -424,6 +424,7 @@
       height: 100vh;
       background-color: none;
       background-color: #c7bebeaf;
+      z-index: 2;
   }
   
   .hidden {

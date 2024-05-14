@@ -11,13 +11,14 @@ function dropDownList() {
 // }
 const toastifyHTML = document.getElementById(`toastify`);
 const toastifyMessageHTML = document.getElementById(`toastify-message`);
-let formScopeHTML = document.getElementById(`form-scope`);
+const formAddMainHTML = document.getElementById(`form-add`);
 const imageProductHTML = document.getElementById(`image-product`);
 const pageList = document.getElementById(`page-list`);
 const tbodyHTML = document.getElementById(`tbody`);
+const buttonSubmitForm = document.getElementById('submit-form');
 
 let imageBase64 = null;
-const PRODUCTS = "products_04";
+const PRODUCTS = "products_03";
 
 let pageSize = 5;
 let totalPage = 1;
@@ -25,11 +26,26 @@ let currentPage = 1;
 
 let textSearch = "";
 let categoryFilter = "All";
+
+let action = "create";
+
+
+//Call element from form
+const prdId = document.getElementById('id');
+const prdName = document.getElementById('name');
+const prdType = document.getElementById('productType');
+const prdGender = document.getElementById('gender');
+const prdCode = document.getElementById('productCode');
+const prdSize = document.getElementById('productSize');
+const prdColor = document.getElementById('productColor');
+const price = document.getElementById('price');
+const quantity = document.getElementById('quantity');
+const description = document.getElementById('description');
 function openForm() {
-  formScopeHTML.classList.remove(`hidden`);
+  formAddMainHTML.classList.remove(`hidden`);
 }
 function closeForm() {
-  formScopeHTML.classList.add(`hidden`);
+  formAddMainHTML.classList.add(`hidden`);
 }
 function render() {
   let realProducts = JSON.parse(localStorage.getItem(PRODUCTS)) || [];
@@ -62,19 +78,23 @@ function renderProducts(products) {
     stringHTML += `
                 <tr>
                     <td>${products[i].id}</td>
+                    <td>${products[i].productCode}</td>
                     <td>
                         <img width="52px" src="${products[i].image}" alt="img">
                     </td>
                     <td>${products[i].name}</td>
-                    <td>${formatMoney(products[i].price)}</td>
+                    <td>${products[i].gender}</td>
+                    <td>${products[i].productType}</td>
+                    <td>${products[i].productSize}</td>
+                    <td>${products[i].productColor}</td>
                     <td>${products[i].quantity}</td>
+                    <td>${formatMoney(products[i].price)}</td>
+                    <td>${products[i].status ? "InStock" : "OutStock"}</td>
                     <td>${products[i].description}</td>
-                    <td>${products[i].category}</td>
-                    <td>${products[i].status ? "Active" : "Block"}</td>
                     <td>
-                        <button>Edit</button>
+                        <button onClick="initUpdate('${products[i].id}')">Edit</button>
                         <button onClick="changeStatus(${i})">${
-      products[i].status ? "Block" : "Active"
+      products[i].status ? "OutStock" : "InStock"
     }</button>
                     </td>
                 </tr>
@@ -163,6 +183,10 @@ function submitForm(e) {
   values.quantity = +values.quantity;
 
   values.image = imageBase64;
+
+  
+
+  //check dk form
   let check = validateFields(values);
   if (check) {
     const products = JSON.parse(localStorage.getItem(PRODUCTS)) || [];
@@ -212,27 +236,98 @@ function showToast(message) {
     clearTimeout(idTimeout);
   }, 2000);
 }
+//funtion check điều kiện
 function validateFields(product) {
-  let check = true;
-  if (product.name.length < 4) {
-    showToast("Name length < 4");
-    return false;
-  }
-  if (product.price <= 0) {
-    showToast("Price <= 0");
-    return false;
-  }
-  if (product.quantity <= 0) {
-    showToast("Quantity <=0");
-    return false;
-  }
-  if (product.description.length <= 10) {
-    showToast("Description <= 10");
-    return false;
-  }
-  if (!product.image) {
-    showToast("dont have img");
-    return false;
-  }
+  // let check = true;
+  // if (product.name.length < 4) {
+  //   showToast("Name length < 4");
+  //   return false;
+  // }
+  // if (product.price <= 0) {
+  //   showToast("Price <= 0");
+  //   return false;
+  // }
+  // if (product.quantity <= 0) {
+  //   showToast("Quantity <=0");
+  //   return false;
+  // }
+  // if (product.description.length <= 10) {
+  //   showToast("Description <= 10");
+  //   return false;
+  // }
+  // if (!product.image) {
+  //   showToast("dont have img");
+  //   return false;
+  // }
   return check;
+}
+
+//Funtion update
+function initUpdate(id){
+  
+  let realProducts = JSON.parse(localStorage.getItem(PRODUCTS)) || [];
+  // realProducts.findIndex(+id)
+  // realProducts.id.findIndex(id)
+  let index = getIndexById(id)
+
+  prdId.value = realProducts[index].id;
+  prdName.value = realProducts[index].name;
+  prdType.value = realProducts[index].productType;
+  prdSize.value = realProducts[index].productSize;
+  prdColor.value = realProducts[index].productColor;
+  prdCode.value = realProducts[index].productCode;
+  price.value = realProducts[index].price;
+  quantity.value = realProducts[index].quantity;
+  description.value = realProducts[index].description;
+
+  formAddMainHTML.classList.remove(`hidden`);
+
+  buttonSubmitForm.innerText = "Update"
+
+  action = "update";
+
+  //B1: ấy thông tin sản phẩm từ id
+  // let index = products.findIndex(product => product.id === id)
+
+  // //B2: Hiển thị dữ liệu cần cập nhật lên form
+  // productID.value = products[index].id;
+  // ...
+  //B3: đổi button add thành update
+  //btn
+  //B4: không cho phép sửa mã sản phẩm(id)
+  //B5: chuyển sang update
+}
+
+
+function getIndexById(id){
+  let realProducts = JSON.parse(localStorage.getItem(PRODUCTS));
+  return realProducts.findIndex(product=> product.id ==id);
+}
+function getDataForm(){
+  return {
+    id: prdId.value,
+    name: prdName.value,
+    code: prdCode.value,
+    gender: prdGender.value,
+    type: prdType.value,
+    size: prdSize.value,
+    color: prdColor.value,
+    quantity: quantity.value,
+    price: price.value,
+    description: description.value,
+  };
+}
+function updateProduct(e){
+  e.preventDefault()
+  const product = getDataForm();
+  let index = getIndexById(product.id);
+  let realProducts = JSON.parse(localStorage.getItem(PRODUCTS));
+  debugger;
+  realProducts[index] = product;
+  console.log(product);
+  console.log(realProducts[index]);
+  action = "create";
+  buttonSubmitForm.innerText ="Submit"
+  prdId.readOnly=false;
+  render();
 }
