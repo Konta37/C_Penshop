@@ -155,7 +155,7 @@
     font-size: var(--typeHeaderSize);
   }
   .logo-wrap{
-    background-image: url("../../image/Logo/main-logo.jpg");
+    background-image: url("../image/Logo/main-logo.jpg");
     height: 48px;
     width: 48px;
     /* background-position: center; */
@@ -425,7 +425,6 @@
       background-color: none;
       background-color: #c7bebeaf;
       z-index: 2;
-      overflow: scroll;
   }
   
   .hidden {
@@ -439,14 +438,12 @@
   
   .scope-input {
       margin: 10px 0;
-      display: flex;
-      text-align:start;
   }
   
   .form-product {
-      width: 800px;
+      width: 400px;
       background-color: white;
-      padding: 16px;
+      padding: 10px;
       border-radius: 4px;
       border: 1px solid #333;
       box-shadow: 1px 1px 1px 1px #999;
@@ -511,20 +508,6 @@
     width: 320px;
     font-size: 24px;
   }
-  .form-product-header{
-    text-align: center;
-    font-weight: var(--typeHeaderWeight);
-    font-size: var(--typeHeaderSize);
-
-  }
-  .product-input{
-    display: grid;
-    grid-template-columns: auto 480px;
-    margin-bottom: 8px;
-  }
-  .product-input input, .product-input select, .scope-input textarea{
-    width: 100%;
-  }
   .search-form {
     width: 100%;
     height: 100%;
@@ -570,6 +553,14 @@
     width: auto;
     height: 40px;
     border: 0.5px solid black;
+  }
+
+  /*========================= Table products ========================*/
+  .table-products{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 18px;
+    padding: 18px 86px;
   }
   :root {
     --typeHeaderPrimary: Montserrat;

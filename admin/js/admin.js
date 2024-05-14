@@ -12,6 +12,7 @@ function dropDownList() {
 const toastifyHTML = document.getElementById(`toastify`);
 const toastifyMessageHTML = document.getElementById(`toastify-message`);
 const formAddMainHTML = document.getElementById(`form-add`);
+const imgProducthiddenHTML = document.getElementById(`image-product`);
 const imageProductHTML = document.getElementById(`image-product`);
 const pageList = document.getElementById(`page-list`);
 const tbodyHTML = document.getElementById(`tbody`);
@@ -31,7 +32,6 @@ let action = "create";
 
 
 //Call element from form
-const prdId = document.getElementById('id');
 const prdName = document.getElementById('name');
 const prdType = document.getElementById('productType');
 const prdGender = document.getElementById('gender');
@@ -49,12 +49,13 @@ function closeForm() {
 }
 function render() {
   let realProducts = JSON.parse(localStorage.getItem(PRODUCTS)) || [];
-
+  // console.log(realProducts);
   //lọc theo category
   if (categoryFilter !== "All") {
     realProducts = realProducts.filter(
-      (product) => product.category === categoryFilter
+      (product) => product.gender === categoryFilter
     );
+    // console.log(realProducts);
   }
   //lọc theo search (vdu search sam thi hien spham samsung)
   realProducts = realProducts.filter((product) =>
@@ -226,6 +227,7 @@ function convertToBase64() {
 
   reader.readAsDataURL(file);
   //kết thúc đọc file
+  imgProducthiddenHTML.classList.remove(`hidden`);
 }
 function showToast(message) {
   toastifyHTML.classList.toggle(`hidden`);

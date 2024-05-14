@@ -48,19 +48,6 @@
               </label>
               <div class="menu-side-bar">
                 <div class="draw-title">
-                  <!-- <div class="menu-search">
-                    <form action="" class="search-form">
-                      <div class="search_input_wrap">
-                        <input
-                          type="search"
-                          name=""
-                          id=""
-                          placeholder="Search..."
-                        />
-                        <p class="search-clear">CLEAR</p>
-                      </div>
-                    </form>
-                  </div> -->
                   <div class="logo-wrap">
                     
                   </div>
@@ -76,22 +63,7 @@
                     </label>
                   </div>
                 </div>
-                <!-- <ul class="moblie-gender_nav">
-                  <li class="mobile-gender__item mobile-nav man active">Men</li>
-                  <li class="mobile-gender__item mobile-nav woman">Woman</li>
-                </ul> -->
                 <div class="drawer__scrollable">
-                  <!-- <div class="accountmenu__container">
-                    <p class="accountmenu__heading">
-                      Shopping is now made easier, try shop online and pick up
-                      in-store!
-                    </p>
-                    <div class="accountmenu__buttons">
-                      <button class="accountmenu">REGISTER NOW</button>
-                      <button class="accountmenu">LOG IN</button>
-                    </div>
-                    <hr />
-                  </div> -->
                   <ul class="mobile-nav men">
                     <li class="mobile-nav__item">
                       <a
@@ -105,6 +77,9 @@
                     </li>
                     <li class="mobile-nav__item">
                       <a href="#" class="mobile-nav__link">Billing</a>
+                    </li>
+                    <li class="mobile-nav__item">
+                      <a href="./user.html" class="mobile-nav__link">User</a>
                     </li>
                     <!-- <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">SHOP BY COLLECTION</a></li> -->
                     <li class="mobile-nav__item">
@@ -168,8 +143,6 @@
                         </div>
                       </div>
                     </li>
-                    
-                    <!-- <li class="mobile-nav__item"><a href="#" class="mobile-nav__link">ACCESSORIES</a></li> -->
                     <li class="mobile-nav__item">
                       <a
                         href="#"
@@ -191,25 +164,6 @@
                       <a href="#" class="mobile-nav__link">Settings</a>
                     </li>
                   </ul>
-                  <!-- <ul class="woman"></ul>
-                  <ul class="mobile-additional__menu">
-                    <li class="mobile-additional__item">
-                      <a href="#" class="mobile-nav__item"
-                        >SHOP KONTA INTERNATIONAL</a
-                      >
-                    </li>
-                    <li class="mobile-additional__item">
-                      <a href="#" class="mobile-nav__item"
-                        >KONTA X GO YOON JUNG</a
-                      >
-                    </li>
-                    <li class="mobile-additional__item">
-                      <a href="#" class="mobile-nav__item">CONTACT US</a>
-                    </li>
-                    <li class="mobile-additional__item">
-                      <a href="#" class="mobile-nav__item">KONTA ACHIVE</a>
-                    </li>
-                  </ul> -->
                 </div>
               </div>
             </div>
@@ -234,10 +188,6 @@
           <section id="form-add-el">
             <form action="" class="form-product" onsubmit="submitForm(event)">
               <p class="form-product-header">Create Product</p>
-              <div class="product-input">
-                <label for="" class="label-product">ID: </label>
-                <input type="text" id="id" name="id">
-              </div>
               <div class="product-input">
                 <label for="" class="label-product">Product Code: </label>
                 <input type="text" id="productCode" name="productCode">
@@ -292,39 +242,32 @@
                 <textarea
                   name="description"
                   id="description"
-                  cols="20"
-                  rows="10"
+                  cols="10"
+                  rows="5"
                 ></textarea>
               </div>
               <div class="scope-input">
                 <label for="input-image" class="label-product pointer"
                   >Image:
                 </label>
-                <!-- <input
-                  id="input-image"
-                  type="file"
-                  accept="image/*"
-                  hidden
-                  onchange="convertToBase64()"
-                /> -->
                 <input
                   id="input-image"
                   type="file"
                   accept="image/*"
                   onchange="convertToBase64()"
                 />
-                <img id="image-product" width="100px" src="" alt="img" />
+                <img id="image-product" width="100px" src="" alt="img" class="hidden"/>
               </div>
               <div style="display: flex; justify-content: center; gap: 12px">
-                <button type="button" onclick="closeForm()">Cancel</button>
-                <button type="submit" id="submit-form">Submit</button>
+                <button type="button" onclick="closeForm()" class="btn">Cancel</button>
+                <button type="submit" id="submit-form" class="btn">Submit</button>
               </div>
             </form>
           </section>
         </div>
         <div class="main-header">
           <div class="table-filter">
-            <span>Select: </span>
+            <span style="font-weight: var(--typeHeaderWeight);">Select: </span>
                 <select name="category" onchange="changeCategory(event)">
                   <option value="All">Everything</option>
                   <option value="men">Men</option>
@@ -334,9 +277,6 @@
                   <option value="menHats">Men's Hats And Caps</option>
                 </select>
           </div>
-          <!-- <div class="btn-add">
-            <button class="btn" onclick="">Add new</button>
-          </div> -->
           <div class="table-name">
             <p class="table-name-content">List Items</p>
           </div>
@@ -399,16 +339,16 @@
               </select>
             </div>
             <div
-              style="display: flex; justify-content: end; align-items: center"
+              style="display: flex; justify-content: end; align-items: center; gap:16px;"
             >
-              <button onclick="changePage(-1)">Previous</button>
+              <button onclick="changePage(-1)" class="btn">Previous</button>
               <p id="page-list"></p>
-              <button onclick="changePage(1)">Next</button>
+              <button onclick="changePage(1)" class="btn">Next</button>
             </div>
           </section>
         </div>
         <div class="footer-table">
-          <button onclick="openForm()">Add</button>
+          <button onclick="openForm()" class="btn-add btn">Add</button>
         </div>
       </div>
     </body>
