@@ -474,21 +474,26 @@
   .page-item {
       display: inline-block;
       margin: 0 4px;
-      padding: 5px;
+      padding: 8px;
       border-radius: 50%;
-      border: 1px solid #999;
+      border: 1px solid #000000;
       cursor: pointer;
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
       text-align: center;
+      align-items: center;
   }
   
   .page-active {
-      background-color: blue;
+      background-color: #e37687;
   }
   
   .page-item:hover {
-      background-color: aqua;
+      background-color: #f6d2d2;
+  }
+  #page-list{
+    /* display: flex;
+    align-items: center; */
   }
 
   .main-header{
@@ -526,13 +531,17 @@
     width: 100%;
   }
   .search-form {
+    display: flex;
     width: 100%;
     height: 100%;
     background-color: #f0f0f0;
     border-radius: 0;
   }
+  .btn-search{
+    margin-left: 8px;
+  }
   .search_input_wrap {
-    width: 100%;
+    width:  80%;
     height: 100%;
     display: flex;
     position: relative;
@@ -543,6 +552,11 @@
     background-color: #f0f0f0;
     padding: 0 10px;
   }
+  /* clears the ‘X’ from Chrome */
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration { display: none; }
   .search-clear {
     position: absolute;
     top: 0.8rem;
@@ -551,13 +565,16 @@
     font-size: 10px;
     cursor: pointer;
   }
+  .main-table-content td{
+    padding-left: 8px;
+  }
   .footer-table{
     display: flex;
     padding: 16px 86px;
     justify-content: right;
   }
   .btn-add{
-    background-color: #f01737;
+    background-color: #f01737 !important;
     color: #ffffff;
   }
   .btn{
@@ -567,9 +584,11 @@
     line-height: var(--typeHeaderLineHeight);
     font-size: calc(var(--typeBaseSize) * 1.2);
     padding: 11px 20px;
-    width: auto;
+    width: 160px;
     height: 40px;
-    border: 0.5px solid black;
+    border: none;
+    color: #ffffff;
+    background-color: #000000;
   }
   :root {
     --typeHeaderPrimary: Montserrat;

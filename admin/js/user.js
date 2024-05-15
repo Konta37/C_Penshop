@@ -19,7 +19,7 @@ function dropDownList() {
   const buttonSubmitForm = document.getElementById('submit-form');
   
   let imageBase64 = null;
-  const PRODUCTS = "products_03";
+  const PRODUCTS = "user_03";
   
   let pageSize = 5;
   let totalPage = 1;
@@ -54,7 +54,7 @@ function dropDownList() {
     //lọc theo category
     if (categoryFilter !== "All") {
       realProducts = realProducts.filter(
-        (product) => product.category === categoryFilter
+        (product) => product.gender === categoryFilter
       );
     }
     //lọc theo search (vdu search sam thi hien spham samsung)
@@ -79,24 +79,16 @@ function dropDownList() {
       stringHTML += `
                   <tr>
                       <td>${products[i].id}</td>
-                      <td>${products[i].productCode}</td>
-                      <td>
-                          <img width="52px" src="${products[i].image}" alt="img">
-                      </td>
                       <td>${products[i].name}</td>
+                      <td>${products[i].email}</td>
+                      <td>${products[i].phoneNumber}</td>
                       <td>${products[i].gender}</td>
-                      <td>${products[i].productType}</td>
-                      <td>${products[i].productSize}</td>
-                      <td>${products[i].productColor}</td>
-                      <td>${products[i].quantity}</td>
-                      <td>${formatMoney(products[i].price)}</td>
-                      <td>${products[i].status ? "InStock" : "OutStock"}</td>
-                      <td>${products[i].description}</td>
+                      <td>${products[i].birthDay}</td>
+                      <td>${products[i].productBought.length}</td>
+                      <td>${products[i].productFavorite.length}</td>
+                      <td>${products[i].productReadyToBuy.length}</td>
                       <td>
-                          <button onClick="initUpdate('${products[i].id}')">Edit</button>
-                          <button onClick="changeStatus(${i})">${
-        products[i].status ? "OutStock" : "InStock"
-      }</button>
+                          <button onClick="initUpdate('${products[i].id}')">Delete</button>
                       </td>
                   </tr>
               `;
@@ -152,6 +144,7 @@ function dropDownList() {
   }
   //hiện thay đổi theo cate
   function changeCategory(e) {
+    // console.log(e.target.value);
     categoryFilter = e.target.value;
     currentPage = 1;
     render();

@@ -270,9 +270,9 @@
             <span style="font-weight: var(--typeHeaderWeight);">Select: </span>
                 <select name="category" onchange="changeCategory(event)">
                   <option value="All">Everything</option>
-                  <option value="men">Men</option>
-                  <option value="women">Women</option>
-                  <option value="Loudspeaker">Unisex</option>
+                  <option value="Men">Men</option>
+                  <option value="Women">Women</option>
+                  <option value="Other">Unisex</option>
                   <option value="menJackets">Men's Jackets</option>
                   <option value="menHats">Men's Hats And Caps</option>
                 </select>
@@ -286,11 +286,13 @@
                 <input
                   type="search"
                   name=""
-                  id=""
+                  id="search"
                   placeholder="Search here..."
+                  onchange="changeTextSearch(event)"
                 />
-                <p class="search-clear">CLEAR</p>
+                <p class="search-clear" onclick="clearSearch()">CLEAR</p>
               </div>
+              <button onclick="render()" class="btn btn-search">Search</button>
             </form>
           </div>
         </div>
@@ -317,6 +319,7 @@
                   <!-- In stock and out of stock -->
                   <th>Status</th> 
                   <th>Description</th>
+                  <th>Actions</th>
                 </tr>
               </thead>
               <tbody id="tbody"></tbody>

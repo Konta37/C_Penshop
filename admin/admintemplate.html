@@ -839,56 +839,11 @@
             <div class="scope-input">
               <label for="name" class="label-product">Name: </label>
               <input id="name" name="name" type="text" />
-            </div>
-            <div class="scope-input">
-              <label for="price" class="label-product">Price: </label>
-              <input id="price" name="price" type="number" min="1" />
-            </div>
-            <div class="scope-input">
-              <label for="quantity" class="label-product">Quantity: </label>
-              <input id="quantity" name="quantity" type="number" min="1" />
-            </div>
-            <div class="scope-input">
-              <label for="category" class="label-product">Quantity: </label>
-              <select name="category">
-                <option value="Laptop">Laptop</option>
-                <option value="Mobile">Mobile</option>
-                <option value="Loudspeaker">Loudspeaker</option>
-              </select>
-            </div>
-            <div class="scope-input">
-              <label for="description" class="label-product"
-                >Description:
-              </label>
-              <textarea
-                name="description"
-                id="description"
-                cols="20"
-                rows="10"
-              ></textarea>
-            </div>
-            <div class="scope-input">
-              <label for="input-image" class="label-product pointer"
-                >Image:
-              </label>
-              <!-- <input
-                id="input-image"
-                type="file"
-                accept="image/*"
-                hidden
-                onchange="convertToBase64()"
-              /> -->
-              <input
-                id="input-image"
-                type="file"
-                accept="image/*"
-                onchange="convertToBase64()"
-              />
-              <img id="image-product" width="100px" src="" alt="img" />
+              <p style="color: red;" id="error-name">L</p>
             </div>
             <div style="display: flex; justify-content: center; gap: 12px">
               <button type="button" onclick="closeForm()">Cancel</button>
-              <button type="submit">Submit</button>
+              <button type="submit">Add</button>
             </div>
           </form>
         </section>
@@ -903,7 +858,7 @@
               "
             >
               <div>
-                <button onclick="openForm()">Add</button>
+                <button id="btn-add">Add</button>
               </div>
               <div>
                 <span>Select: </span>
@@ -915,25 +870,20 @@
                 </select>
               </div>
               <div>
-                <input type="text" onchange="changeTextSearch(event)" />
-                <button onclick="render()">Search</button>
+                <input id="text-search" type="text" onchange="changeTextSearch(event)" />
+                <button onclick="changeTextSearch()">Search</button>
               </div>
             </div>
           </section>
           <section id="table">
             <table>
               <caption style="font-weight: bold; font-size: 20px; margin: 12px">
-                Products table
+                Categories table
               </caption>
               <thead>
                 <tr>
                   <th>Id</th>
-                  <th>Image</th>
                   <th>Name</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Description</th>
-                  <th>Category</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>

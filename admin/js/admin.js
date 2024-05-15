@@ -17,6 +17,7 @@ const imageProductHTML = document.getElementById(`image-product`);
 const pageList = document.getElementById(`page-list`);
 const tbodyHTML = document.getElementById(`tbody`);
 const buttonSubmitForm = document.getElementById('submit-form');
+const searchEnter = document.getElementById(`search`);
 
 let imageBase64 = null;
 const PRODUCTS = "products_03";
@@ -32,6 +33,7 @@ let action = "create";
 
 
 //Call element from form
+// const prdId = document.getElementById('id')
 const prdName = document.getElementById('name');
 const prdType = document.getElementById('productType');
 const prdGender = document.getElementById('gender');
@@ -46,6 +48,9 @@ function openForm() {
 }
 function closeForm() {
   formAddMainHTML.classList.add(`hidden`);
+}
+function clearSearch() {
+  searchEnter.value="";
 }
 function render() {
   let realProducts = JSON.parse(localStorage.getItem(PRODUCTS)) || [];
@@ -272,7 +277,7 @@ function initUpdate(id){
   // realProducts.id.findIndex(id)
   let index = getIndexById(id)
 
-  prdId.value = realProducts[index].id;
+  // prdId.value = realProducts[index].id;
   prdName.value = realProducts[index].name;
   prdType.value = realProducts[index].productType;
   prdSize.value = realProducts[index].productSize;
@@ -307,7 +312,7 @@ function getIndexById(id){
 }
 function getDataForm(){
   return {
-    id: prdId.value,
+    // id: prdId.value,
     name: prdName.value,
     code: prdCode.value,
     gender: prdGender.value,
@@ -324,7 +329,7 @@ function updateProduct(e){
   const product = getDataForm();
   let index = getIndexById(product.id);
   let realProducts = JSON.parse(localStorage.getItem(PRODUCTS));
-  debugger;
+  // debugger;
   realProducts[index] = product;
   console.log(product);
   console.log(realProducts[index]);
