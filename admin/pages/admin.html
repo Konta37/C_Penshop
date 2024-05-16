@@ -261,6 +261,7 @@
               <div style="display: flex; justify-content: center; gap: 12px">
                 <button type="button" onclick="closeForm()" class="btn">Cancel</button>
                 <button type="submit" id="submit-form" class="btn">Submit</button>
+                <button type="button" id="update-form" class="btn hidden" onclick="updateProduct(event)">Update</button>
               </div>
             </form>
           </section>
@@ -292,7 +293,7 @@
                 />
                 <p class="search-clear" onclick="clearSearch()">CLEAR</p>
               </div>
-              <button onclick="render()" class="btn btn-search">Search</button>
+              <button onclick="changeTextSearch(event)" class="btn btn-search">Search</button>
             </form>
           </div>
         </div>

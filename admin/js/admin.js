@@ -17,6 +17,7 @@ const imageProductHTML = document.getElementById(`image-product`);
 const pageList = document.getElementById(`page-list`);
 const tbodyHTML = document.getElementById(`tbody`);
 const buttonSubmitForm = document.getElementById('submit-form');
+const buttonUpdateForm = document.getElementById(`update-form`);
 const searchEnter = document.getElementById(`search`);
 
 let imageBase64 = null;
@@ -31,6 +32,7 @@ let categoryFilter = "All";
 
 let action = "create";
 
+let idUpdate = null;
 
 //Call element from form
 // const prdId = document.getElementById('id')
@@ -45,9 +47,13 @@ const quantity = document.getElementById('quantity');
 const description = document.getElementById('description');
 function openForm() {
   formAddMainHTML.classList.remove(`hidden`);
+  buttonSubmitForm.classList.remove('hidden');
+  buttonUpdateForm.classList.add('hidden');
+  clearForm();
 }
 function closeForm() {
   formAddMainHTML.classList.add(`hidden`);
+  clearForm();
 }
 function clearSearch() {
   searchEnter.value="";
@@ -55,6 +61,12 @@ function clearSearch() {
 function render() {
   let realProducts = JSON.parse(localStorage.getItem(PRODUCTS)) || [];
   // console.log(realProducts);
+   //Khởi tạo id bằng 1, nếu mảng category có ptu thì lấy dữ liệu ptu cuối +1
+   let id = 1;
+   //ktra xem có ptu hay ko
+   if (realProducts.length>0){
+     id = realProducts[realProducts.length -1].id+1;
+   }
   //lọc theo category
   if (categoryFilter !== "All") {
     realProducts = realProducts.filter(
@@ -66,7 +78,6 @@ function render() {
   realProducts = realProducts.filter((product) =>
     product.name.toLowerCase().includes(textSearch)
   );
-
   renderPaginations(realProducts);
   renderProducts(realProducts);
 }
@@ -164,8 +175,15 @@ function changeCategory(e) {
 
 //check theo input và nút search
 function changeTextSearch(e) {
-  textSearch = e.target.value.toLowerCase();
+  textSearch = document.getElementById("search").value.toLowerCase();
+  e.preventDefault()
+  // textSearch = e.target.value.toLowerCase();
   currentPage = 1;
+  const products = JSON.parse(localStorage.getItem(PRODUCTS));
+  const categoryFilter = products.filter(item => item.name.toLowerCase().includes(textSearch));
+
+  render(categoryFilter)
+  
 }
 
 //chuyển trạng thái status
@@ -271,7 +289,7 @@ function validateFields(product) {
 
 //Funtion update
 function initUpdate(id){
-  
+  idUpdate=id;
   let realProducts = JSON.parse(localStorage.getItem(PRODUCTS)) || [];
   // realProducts.findIndex(+id)
   // realProducts.id.findIndex(id)
@@ -289,9 +307,8 @@ function initUpdate(id){
 
   formAddMainHTML.classList.remove(`hidden`);
 
-  buttonSubmitForm.innerText = "Update"
-
-  action = "update";
+  buttonUpdateForm.classList.remove(`hidden`);
+  buttonSubmitForm.classList.add(`hidden`)
 
   //B1: ấy thông tin sản phẩm từ id
   // let index = products.findIndex(product => product.id === id)
@@ -324,17 +341,30 @@ function getDataForm(){
     description: description.value,
   };
 }
+function clearForm(){
+  prdCode.value="";
+  prdName.value="";
+  prdGender.value="";
+  prdType.value="";
+  prdColor.value="";
+  quantity.value="";
+  price.value="";
+  description.value="";
+  prdSize.value="XS";
+}
 function updateProduct(e){
-  e.preventDefault()
-  const product = getDataForm();
-  let index = getIndexById(product.id);
   let realProducts = JSON.parse(localStorage.getItem(PRODUCTS));
+  const product = getDataForm();
+  console.log(product)
+  let indexUpdate = realProducts.findIndex(item=>item.id ==idUpdate);
+  console.log(indexUpdate);
   // debugger;
-  realProducts[index] = product;
-  console.log(product);
-  console.log(realProducts[index]);
-  action = "create";
-  buttonSubmitForm.innerText ="Submit"
-  prdId.readOnly=false;
+
+  realProducts[indexUpdate].name = product.name;
+  console.log(product.name);
+  console.log(realProducts[indexUpdate]);
+  localStorage.setItem(PRODUCTS, JSON.stringify(realProducts))
   render();
+  closeForm();
+  return;
 }

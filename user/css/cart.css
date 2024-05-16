@@ -726,6 +726,9 @@
     font-weight: var(--typeHeaderWeight);
     font-family: var(--typeHeaderPrimary), var(--typeHeaderFallback);
   }
+  .margin-top-5{
+    margin-top: 5px;
+  }
   :root {
     --typeHeaderPrimary: Montserrat;
     --typeHeaderFallback: sans-serif;
