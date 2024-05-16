@@ -843,7 +843,7 @@
             </div>
             <div style="display: flex; justify-content: center; gap: 12px">
               <button type="button" onclick="closeForm()">Cancel</button>
-              <button type="submit">Add</button>
+              <button type="submit" id="btn-submit">Add</button>
             </div>
           </form>
         </section>
@@ -869,8 +869,9 @@
                   <option value="Loudspeaker">Loudspeaker</option>
                 </select>
               </div>
+              <!-- onchange="changeTextSearch()" -->
               <div>
-                <input id="text-search" type="text" onchange="changeTextSearch(event)" />
+                <input id="text-search" type="text"  />
                 <button onclick="changeTextSearch()">Search</button>
               </div>
             </div>

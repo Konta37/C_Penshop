@@ -98,9 +98,12 @@ function submitForm(event){
 }
 
 //render hiển thị ra
-function render(){
-  const categorys = JSON.parse(localStorage.getItem(CATEGORY_LOCAL))||[];
+function render(data){
+  let categorys = JSON.parse(localStorage.getItem(CATEGORY_LOCAL))||[];
 
+  if (Array.isArray(data)) {
+    categorys = data;
+  }
   let stringHTML = ``;
 
   for (let i = 0; i < categorys.length; i++) {
@@ -163,7 +166,14 @@ function initUpdate(id){
 }
 function changeStatus(id){
   //Tìm vị trí
-  const categorys = JSON.parse(localStorage.getItem(CATEGORY_LOCAL))||[];
+  const categorys = JSON.parse(localStorage.getItem(CATEGORY_LOCAL))
+  const index = categorys.findIndex(item => item.id === id)
+  // cập nhật giá trị
+  categorys[index].status = !categorys[index].status
+  // lưu
+  localStorage.setItem(CATEGORY_LOCAL, JSON.stringify(categorys))
+  // render
+  render()
 
 }
 
@@ -171,6 +181,8 @@ function changeTextSearch(){
   const textSearch = document.getElementById("text-search").value.toLowerCase();
 
   const categorys = JSON.parse(localStorage.getItem(CATEGORY_LOCAL))||[];
+  console.log(categorys);
   const categoryFilter = categorys.filter(item => item.name.toLowerCase().includes(textSearch));
   console.log(categoryFilter);
+  render(categoryFilter)
 }
