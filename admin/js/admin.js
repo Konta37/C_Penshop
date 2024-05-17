@@ -49,6 +49,7 @@ function openForm() {
   formAddMainHTML.classList.remove(`hidden`);
   buttonSubmitForm.classList.remove('hidden');
   buttonUpdateForm.classList.add('hidden');
+  imgProducthiddenHTML.classList.add('hidden')
   clearForm();
 }
 function closeForm() {
@@ -304,9 +305,9 @@ function initUpdate(id){
   price.value = realProducts[index].price;
   quantity.value = realProducts[index].quantity;
   description.value = realProducts[index].description;
-
+  imageProductHTML.src = realProducts[index].image;
+  imageProductHTML.classList.remove('hidden');
   formAddMainHTML.classList.remove(`hidden`);
-
   buttonUpdateForm.classList.remove(`hidden`);
   buttonSubmitForm.classList.add(`hidden`)
 
@@ -328,6 +329,7 @@ function getIndexById(id){
   return realProducts.findIndex(product=> product.id ==id);
 }
 function getDataForm(){
+  console.log(imgProducthiddenHTML.src);
   return {
     // id: prdId.value,
     name: prdName.value,
@@ -339,6 +341,7 @@ function getDataForm(){
     quantity: quantity.value,
     price: price.value,
     description: description.value,
+    image: imgProducthiddenHTML.src,
   };
 }
 function clearForm(){
@@ -351,6 +354,7 @@ function clearForm(){
   price.value="";
   description.value="";
   prdSize.value="XS";
+  imageProductHTML.src=""
 }
 function updateProduct(e){
   let realProducts = JSON.parse(localStorage.getItem(PRODUCTS));
@@ -361,6 +365,7 @@ function updateProduct(e){
   // debugger;
 
   realProducts[indexUpdate].name = product.name;
+  realProducts[indexUpdate].image = product.image;
   console.log(product.name);
   console.log(realProducts[indexUpdate]);
   localStorage.setItem(PRODUCTS, JSON.stringify(realProducts))
