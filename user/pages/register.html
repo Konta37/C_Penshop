@@ -835,9 +835,9 @@
                       oninput="checkFName()"
                     />
                     <ul id="ul-first-name-cf" class="cf-error">
-                      <li>Must not be blank</li>
+                      <!-- <li>Must not be blank</li>
                       <li>First name must be letters only</li>
-                      <li>First name must be more than 1 character</li>
+                      <li>First name must be more than 1 character</li> -->
                     </ul>
                   </div>
                 </div>
@@ -852,9 +852,9 @@
                       oninput="checkLName()"
                     />
                     <ul id="ul-last-name-cf" class="cf-error">
-                      <li>Must not be blank</li>
+                      <!-- <li>Must not be blank</li> -->
                       <!-- <li>First name must be letters only</li> -->
-                      <li>First name must be more than 1 character</li>
+                      <!-- <li>First name must be more than 1 character</li> -->
                     </ul>
                   </div>
                 </div>
@@ -868,7 +868,7 @@
                       name="usermail"
                     />
                     <ul class="cf-error">
-                      <li>Must not be blank</li>
+                      <!-- <li>Must not be blank</li> -->
                     </ul>
                   </div>
                 </div>
@@ -881,6 +881,7 @@
                       placeholder="+63900123123"
                       name="userphone"
                     />
+                    <ul class="cf-error"></ul>
                   </div>
                 </div>
                 <div class="cf-field-container cf-birthday">
@@ -892,14 +893,14 @@
                       placeholder="MM-DD-YYYY"
                       name="userdate"
                     />
-                    <ul class="cf-error hidde">
-                      <li>Must not be blank</li>
+                    <ul class="cf-error">
+                      <!-- <li>Must not be blank</li>
                       <li>
                         Minimum age requirement to register is 13 years old.
                       </li>
                       <li>
                         Maximum age requirement to register is 80 years old.
-                      </li>
+                      </li> -->
                     </ul>
                   </div>
                 </div>
@@ -910,15 +911,15 @@
                       <div class="cf-gender-type">
                         <label for="">Gender *</label>
                         <label for="" class="cf-enum-field__choice">
-                          <input type="radio" name="gender">
+                          <input type="radio" name="gender" value="men">
                           <span>MALE</span>
                         </label>
                         <label for="" class="cf-enum-field__choice">
-                          <input type="radio" name="gender">
+                          <input type="radio" name="gender" value="female">
                           <span>FEMALE</span>
                         </label>
                         <label for="" class="cf-enum-field__choice">
-                          <input type="radio" name="gender">
+                          <input type="radio" name="gender" value="other">
                           <span>PREFER NOT TO SAY</span>
                         </label>
                       </div>
@@ -927,7 +928,7 @@
                 </div>
                 <div class="gird cf-btn-actions">
                   <button type="button" class="cf-cancel cf-btn">
-                    <a href="./login.html">Cancel</a>
+                    <a href="../../login.html">Cancel</a>
                   </button>
                   <button type="submit" class="cf-submit-form cf-btn">
                     Create account
