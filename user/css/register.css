@@ -446,29 +446,73 @@
     grid-template-columns: auto;
     padding: 8px 16px;
   }
-  .cf-name{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 16px;
+  .cf-field-container {
+    /* display: grid;
+    grid-template-rows: auto auto; */
+    flex-grow: 0;
+    width: 50%;
   }
-  .cf-first-name,.cf-last-name{
-    display: grid;
-    grid-template-rows: auto auto;
+  .cf-field{
+    margin: 4px 0;
+    padding: .5em;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    align-items: flex-start;
+    position: relative;
   }
-
+  .cf-field input{
+    width: 100%;
+    max-width: none;
+    text-align: left;
+  }
+  .cf-email,.cf-mobile,.cf-birthday,.cf-gender{
+    width: 100%;
+  }
+  .cf-fields-container{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0 -.5em;
+    width: calc(100% + 1em);
+  }
   .cf-btn-actions{
     display: grid;
     grid-template-columns: auto auto;
     gap: 16px;
     margin-top: 24px;
   }
-  .cf-error{
-    
+  .cf-enum-field__choices{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .cf-enum-field__choice{
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    margin: .5em 1em .5em 0;
+    flex-shrink: 0; 
+  }
+  .cf-enum-field__choice input{
+    margin: 0 .5em 0 0;
+    position: static;
+    flex-shrink: 0;
+    display: inline-block !important;
+    width: auto;
+    height: auto;
+  }
+  .cf-enum-field__choice span{
+    font-size: calc(var(--typeBaseSize)*0.8);
   }
   .cf-error {
     margin: 8px 0 0 2px ;
     padding: 0 ;
-    display: none;
+    display: block;
+    opacity: 1;
+    width: 100%;
   }
   .cf-error li{
     list-style: none;
@@ -477,6 +521,10 @@
     margin: 0 0 0.5em;
     color: #ce2525;
   }
+
+  /* .hidden{
+    display: none;
+  } */
   .cf-btn{
     background-color: #f01737;
     border: none;

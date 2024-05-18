@@ -37,3 +37,107 @@ function dropDownList() {
   // btnCancel.onclick = function(){
   //   window.location = `./login.html`
   // }
+  let form  =document.getElementById("CustomerRegisterForm");
+  // console.log(form);
+  // console.log(form.firstname);
+  let firstName = document.getElementById("CustomerFirstName");
+  let lastName = document.getElementById("CustomerLastName");
+  let cfLasttName = document.getElementById("ul-last-name-cf");
+  let cfFirstName = document.getElementById("ul-first-name-cf");
+  // console.log(cfFirstName.style);
+
+  function checkFName(){
+    // let regex = /[A-Z]/i;
+    // if (form.firstname.value.length == 0) {
+    //   cfFirstName.innerHTML=
+    //   `
+    //   <li>Must not be blank</li>
+    //   `;
+    //   cfLasttName.innerHTML=
+    //   `
+    //   <li>Must not be blank</li>
+    //   `;
+    //   cfLasttName.style.display = "block";
+    //   cfFirstName.style.display = "block";
+    //   cfFirstName.style.opacity ="1";
+    //   return;
+    // }
+    // if (!regex.test(form.firstname.value)) {
+    //   cfFirstName.innerHTML=
+    //   `
+    //   <li>Name does not have number</li>
+    //   `;
+    //   cfLasttName.innerHTML=
+    //   `
+    //   <li>Name does not have number</li>
+    //   `;
+    //   cfLasttName.style.display = "block";
+    //   cfFirstName.style.display = "block";
+    //   cfFirstName.style.opacity ="1";
+    //   return;
+    // }
+    // if (form.firstname.value.length < 2) {
+    //   cfFirstName.innerHTML=
+    //   `
+    //   <li>First name must be more than 1 character</li>
+    //   `;
+    //   cfLasttName.innerHTML=
+    //   `
+    //   <li>First name must be more than 1 character</li>
+    //   `;
+    //   cfLasttName.style.display = "block";
+    //   cfFirstName.style.display = "block";
+    //   cfFirstName.style.opacity ="1";
+    //   return;
+    // }
+    // cfFirstName.style.opacity=0;
+    // cfLasttName.style.opacity=0;
+    
+  }
+  function checkLName(){
+    // let regex = /[A-Z]/i;
+    // if (form.lastname.value.length == 0) {
+    //   cfFirstName.innerHTML=
+    //   `
+    //   <li>Must not be blank</li>
+    //   `;
+    //   cfLasttName.innerHTML=
+    //   `
+    //   <li>Must not be blank</li>
+    //   `;
+    //   cfLasttName.style.display = "block";
+    //   cfFirstName.style.display = "block";
+    //   cfLasttName.style.opacity ="1";
+    //   return;
+    // }
+    // if (!regex.test(form.lastname.value)) {
+    //   cfFirstName.innerHTML=
+    //   `
+    //   <li>Name does not have number</li>
+    //   `;
+    //   cfLasttName.innerHTML=
+    //   `
+    //   <li>Name does not have number</li>
+    //   `;
+    //   cfLasttName.style.display = "block";
+    //   cfFirstName.style.display = "block";
+    //   cfLasttName.style.opacity ="1";
+    //   return;
+    // }
+    // if (form.lastname.value.length < 2) {
+    //   cfFirstName.innerHTML=
+    //   `
+    //   <li>First name must be more than 1 character</li>
+    //   `;
+    //   cfLasttName.innerHTML=
+    //   `
+    //   <li>First name must be more than 1 character</li>
+    //   `;
+    //   cfLasttName.style.display = "block";
+    //   cfFirstName.style.display = "block";
+    //   cfLasttName.style.opacity ="1";
+    //   return;
+    // }
+    // cfFirstName.style.opacity=0;
+    // cfLasttName.style.opacity=0;
+  }
