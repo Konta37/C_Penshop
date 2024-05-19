@@ -31,3 +31,29 @@ function dropDownList8() {
   // document.getElementById("Linklist-3").classList.toggle("showMenu");
   document.getElementById("Linklist-8").classList.toggle("showMenu");
 }
+let btn = document.getElementById("login-sign-in-submit");
+let form = document.getElementById("customer_login");
+
+form.onsubmit = function(e){
+  e.preventDefault();
+  let userList = JSON.parse(localStorage.getItem("userList")) || [];
+  let email = form.useremail.value;
+  let password = form.password.value;
+
+  const userForm ={
+    email: email,
+    password:password,
+  }
+
+  const userFind =userList.find(item => item.email === userForm.email && item.password ===userForm.password)
+  // console.log(user);
+  if(!userFind){
+    alert("Khong tim thay");
+    return;
+  }
+  //tìm thấy
+  //lưu thông tin lên local
+  localStorage.setItem("user_login", JSON.stringify(userFind));
+  //chuyển trang
+  window.location.href = "./index.html";
+}

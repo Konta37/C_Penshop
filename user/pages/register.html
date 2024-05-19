@@ -795,13 +795,13 @@
               </div>
             </div>
             <div class="name-shop">
-              <a href="../index.html"><b>KONTA</b></a>
+              <a href="../../index.html"><b>KONTA</b></a>
             </div>
             <div class="header-funtion">
               <div class="site-nav__link">
-                <ion-icon name="person-circle-outline"></ion-icon>
-                <ion-icon name="heart-outline"></ion-icon>
-                <ion-icon name="bag-handle-outline"></ion-icon>
+                <a href="../../login.html"><ion-icon name="person-circle-outline"></ion-icon></a>
+                <a href="#"><ion-icon name="heart-outline"></ion-icon></a>               
+                <a href="#"><ion-icon name="bag-handle-outline"></ion-icon></a>
               </div>
             </div>
           </div>
@@ -832,7 +832,7 @@
                       id="CustomerFirstName"
                       placeholder="John"
                       name="firstname"
-                      oninput="checkFName()"
+                      
                     />
                     <ul id="ul-first-name-cf" class="cf-error">
                       <!-- <li>Must not be blank</li>
@@ -849,7 +849,7 @@
                       id="CustomerLastName"
                       placeholder="Doe"
                       name="lastname"
-                      oninput="checkLName()"
+
                     />
                     <ul id="ul-last-name-cf" class="cf-error">
                       <!-- <li>Must not be blank</li> -->
@@ -862,10 +862,38 @@
                   <div class="cf-field">
                     <label for="">EMAIL *</label>
                     <input
-                      type="email"
+                      type="text"
                       id="CustomerEmail"
                       placeholder="email@gmail.com"
                       name="usermail"
+                    />
+                    <ul class="cf-error">
+                      <!-- <li>Must not be blank</li> -->
+                    </ul>
+                  </div>
+                </div>
+                <div class="cf-field-container cf-email">
+                  <div class="cf-field">
+                    <label for="">PASSWORD *</label>
+                    <input
+                      type="password"
+                      id="CustomerPass"
+                      placeholder=""
+                      name="password"
+                    />
+                    <ul class="cf-error">
+                      <!-- <li>Must not be blank</li> -->
+                    </ul>
+                  </div>
+                </div>
+                <div class="cf-field-container cf-email">
+                  <div class="cf-field">
+                    <label for="">CONFIRM PASSWORD *</label>
+                    <input
+                      type="password"
+                      id="CustomerPassCheck"
+                      placeholder=""
+                      name="passwordcheck"
                     />
                     <ul class="cf-error">
                       <!-- <li>Must not be blank</li> -->
@@ -951,6 +979,7 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/register.js"></script>
   </body>
 </html>
