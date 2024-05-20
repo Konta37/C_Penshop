@@ -194,7 +194,11 @@
               </div>
               <div class="product-input">
                 <label for="" class="label-product">Name: </label>
-                <input type="text" id="name" name="name">
+                <Select name="name" id="nameAdd">
+                  <option value="Men">Men</option>
+                  <option value="Women">Women</option>
+                  <option value="Other">Other</option>
+                </Select>
               </div>
               <div class="product-input">
                 <label for="" class="label-product">Gender: </label>
@@ -269,13 +273,8 @@
         <div class="main-header">
           <div class="table-filter">
             <span style="font-weight: var(--typeHeaderWeight);">Select: </span>
-                <select name="category" onchange="changeCategory(event)">
-                  <option value="All">Everything</option>
-                  <option value="Men">Men</option>
-                  <option value="Women">Women</option>
-                  <option value="Other">Unisex</option>
-                  <option value="menJackets">Men's Jackets</option>
-                  <option value="menHats">Men's Hats And Caps</option>
+                <select name="category" onchange="changeCategory(event)" id="category">
+                  <!-- <option value="All">Everything</option> -->
                 </select>
           </div>
           <div class="table-name">

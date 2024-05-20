@@ -55,7 +55,6 @@ function dropDownList8() {
 }
 
 //change selected menu
-
 function activeBody() {
   const changeGenderPage =
     document.getElementsByClassName(`mobile-gender__item`);
@@ -63,4 +62,15 @@ function activeBody() {
   for (const item of changeGenderPage) {
     item.classList.toggle("active");
   }
+}
+let checkMenu = document.getElementById("check");
+let btnMenu = document.getElementById("btnMenu");
+btnMenu.onclick = function openMenu(){
+  if (checkMenu.checked ==true) {
+    checkMenu.checked = false;
+  }
+  else{
+    checkMenu.checked = true;
+  }
+
 }

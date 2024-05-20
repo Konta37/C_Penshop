@@ -36,9 +36,16 @@ let form = document.getElementById("customer_login");
 
 form.onsubmit = function(e){
   e.preventDefault();
+
   let userList = JSON.parse(localStorage.getItem("userList")) || [];
   let email = form.useremail.value;
   let password = form.password.value;
+  console.log(form.useremail.value,form.password.value);
+
+  if(email==="admin@gmail.com" && password ==="admin"){
+    window.location.href = "./admin/pages/dashboard.html"
+    return;
+  }
 
   const userForm ={
     email: email,
@@ -56,4 +63,15 @@ form.onsubmit = function(e){
   localStorage.setItem("user_login", JSON.stringify(userFind));
   //chuyển trang
   window.location.href = "./index.html";
+}
+let checkMenu = document.getElementById("check");
+let btnMenu = document.getElementById("btnMenu");
+btnMenu.onclick = function openMenu(){
+  if (checkMenu.checked ==true) {
+    checkMenu.checked = false;
+  }
+  else{
+    checkMenu.checked = true;
+  }
+
 }

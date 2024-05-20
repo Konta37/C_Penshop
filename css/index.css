@@ -138,6 +138,44 @@ ul {
 .draw-title-close {
   color: black;
 }
+/* Responsive */
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: -30px;
+}
+.bottom-nav-container {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  backdrop-filter: blur(5px);
+  padding: 8px 0;
+  z-index: 6;
+}
+.bottom-nav-inner {
+  display: flex;
+  margin-left: 0;
+}
+.site-nav__link--icon ion-icon {
+  width: 25px;
+  height: 25px;
+}
+.bottom-nav-container a{
+  color: #ffffff;
+  text-decoration: none;
+}
+.bottom-nav-container .bottom-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.one-quarter{
+  width: 25%;
+}
 
 /* ==========================man menu============ */
 .moblie-gender_nav {
@@ -336,13 +374,13 @@ hr {
   padding-inline-start: 0px;
   unicode-bidi: isolate;
 }
-.mobile-additional__item{
+.mobile-additional__item {
   font-size: var(--typeBaseSize);
   list-style: none;
   padding: 5px 15px 5px 0;
   margin-bottom: 0.25em;
 }
-.mobile-nav__item{
+.mobile-nav__item {
   color: black;
   position: relative;
   display: block;
@@ -372,11 +410,11 @@ hr {
   gap: 10px;
   align-items: center;
 }
-.site-nav__link a{
+.site-nav__link a {
   text-decoration: none;
   color: black;
 }
-.site-nav__link ion-icon{
+.site-nav__link ion-icon {
   cursor: pointer;
 }
 
@@ -575,6 +613,80 @@ hr {
   background-color: #fff !important;
 }
 
+/* responsive */
+@media screen and (max-width: 768px) {
+  .site-nav {
+    padding: 0 10px;
+  }
+  .header-main {
+    justify-content: center;
+  }
+  .name-shop {
+    margin: 0;
+    padding-left: 0 !important;
+  }
+  .header-sale,
+  .header-funtion,.icon-menu {
+    display: none;
+  }
+  .bottom-nav-container {
+    display: block;
+  }
+
+  /* Footer page */
+  .swiper-perks{
+    max-width: 1300px;
+    padding: 0 1%;
+    margin: 10px 5% 32px 5%;
+    text-align: center !important ;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: unset;
+  }
+  .perks-items{
+    /* width: 100; */
+    min-width: 80px;
+    max-width: 160px;
+  }
+  .swiper-perks .perks-items box-icon{
+    width: 30px;
+    height: 30px;
+  }
+  .swiper-sale a button{
+    padding: 8px 24px 8px;
+    margin-bottom: 24px;
+  }
+  .swiper-perks .perks-items a,.footer-social-links{
+    font-size: 8px;
+  }
+  .footer-custom-block ul{
+    padding-inline-start: 0px;
+  }
+  .img1{
+    content: url("../image/phone/MOBILE_1025x1500_ae290c21-dd90-4504-a76b-ecb3135e62a4.webp");
+  }
+  .img2{
+    content: url(../image/phone/DOTCOM_MOBILE_-_1025X1500_0c0a0bd7-5dc1-46b1-81d0-4e1fb4e26545.webp);
+  }
+  .img3{
+    content: url(../image/phone/PEN_EASY_IN_LINEN_LIFESTYLE-MEN_MOBILE_bc8d3492-ccdd-4b37-bc8a-1dd9ccd85a12.webp);
+  }
+  .img4{
+    content: url(../image/phone/PEN_Q1_SWIM_BANNERS-MEN_MOBILE_1e59d380-a52e-469f-a026-03c0da4397be.webp);
+  }
+  .women-img1{
+    content: url(../image/phone/PEN_Q1-DISNEY_DOTCOM_MOBILE.webp);
+  }
+  .women-img2{
+    content: url(../image/phone/PEN_Q1_GYJ_DOTCOM-4_MOBILE_2fd34dd5-7ba8-437c-95e3-3510b05e4c42.webp);
+  }
+  .women-img3{
+    content: url(../image/phone/PEN_EASY_IN_LINEN_LIFESTYLE-WOMEN_MOBILE_a4af0b27-22cf-4a34-ae62-86e230249b5a.webp);
+  }
+  .women-img4{
+    content: url(../image/phone/PEN_Q1_SWIM_BANNERS-WOMEN_MOBILE_305671dd-16ee-45df-8088-2c5d2afe3beb.webp);
+  }
+}
 :root {
   --typeHeaderPrimary: Montserrat;
   --typeHeaderFallback: sans-serif;

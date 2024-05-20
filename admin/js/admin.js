@@ -36,7 +36,7 @@ let idUpdate = null;
 
 //Call element from form
 // const prdId = document.getElementById('id')
-const prdName = document.getElementById('name');
+const prdName = document.getElementById('nameAdd');
 const prdType = document.getElementById('productType');
 const prdGender = document.getElementById('gender');
 const prdCode = document.getElementById('productCode');
@@ -49,7 +49,8 @@ function openForm() {
   formAddMainHTML.classList.remove(`hidden`);
   buttonSubmitForm.classList.remove('hidden');
   buttonUpdateForm.classList.add('hidden');
-  imgProducthiddenHTML.classList.add('hidden')
+  imgProducthiddenHTML.classList.add('hidden');
+
   clearForm();
 }
 function closeForm() {
@@ -373,3 +374,34 @@ function updateProduct(e){
   closeForm();
   return;
 }
+
+let selectCategory = document.getElementById("category");
+let selectCategoryAdd = document.getElementById("nameAdd");
+let CATEGORYS = "categorys";
+
+function renderCategory(){
+  const categorys = JSON.parse(localStorage.getItem(CATEGORYS)) ||[];
+  let stringHTML =`<option value="All">Everything</option>`;
+  for (let i = 0; i < categorys.length; i++) {
+    if (categorys[i].status) {
+      stringHTML += `
+      <option value="${categorys[i].id}">${categorys[i].name}</option>
+      `
+    }
+  }
+  selectCategory.innerHTML = stringHTML;
+}
+renderCategory();
+function renderCategoryAdd(){
+  const categorys = JSON.parse(localStorage.getItem(CATEGORYS)) ||[];
+  let stringHTML =``;
+  for (let i = 0; i < categorys.length; i++) {
+    if (categorys[i].status) {
+      stringHTML += `
+      <option value="${categorys[i].id}">${categorys[i].name}</option>
+      `
+    }
+  }
+  selectCategoryAdd.innerHTML = stringHTML;
+}
+renderCategoryAdd();
