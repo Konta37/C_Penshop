@@ -74,3 +74,15 @@ btnMenu.onclick = function openMenu(){
   }
 
 }
+
+let profile = document.getElementById("profile");
+
+function profileChange(){
+  let userLogin = JSON.parse(localStorage.getItem("user_login")) ||[];
+  if (!userLogin) {
+    window.location.href ="./login.html";
+  }
+  else{
+    window.location.href ="./user/pages/profile.html";
+  }
+}

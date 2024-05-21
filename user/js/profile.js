@@ -55,6 +55,7 @@ render()
 
 function logout() {
     localStorage.removeItem("user_login")
+    window.location.href = "../../login.html";
     render()
 }
 
