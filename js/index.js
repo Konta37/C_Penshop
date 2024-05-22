@@ -86,3 +86,25 @@ function profileChange(){
     window.location.href ="./user/pages/profile.html";
   }
 }
+
+function find(){
+  let userList = JSON.parse(localStorage.getItem("userList")) || [];
+  let admin = {
+    id: 1,
+    name: "admin",
+    email: "admin@gmail.com",
+    password: "admin",
+    role: "admin",
+    status: true,
+  }
+  let admins =[];
+  admins.push(admin);
+  // console.log(userList.findIndex(item=>item.email === email.value));
+  let userIdIndex = userList.findIndex(item=>item.email===admin.email);
+  if (userIdIndex<0){
+    localStorage.setItem("userList", JSON.stringify(admins));
+  }else{
+
+  }
+}
+find();

@@ -390,6 +390,10 @@
   .site-nav__link {
     margin: 0 auto;
   }
+  .site-nav__link a {
+    text-decoration: none;
+    color: black;
+  }
   .site-nav__link ion-icon {
     cursor: pointer;
   }

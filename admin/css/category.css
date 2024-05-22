@@ -390,6 +390,10 @@
   .site-nav__link {
     margin: 0 auto;
   }
+  .site-nav__link a {
+    text-decoration: none;
+    color: black;
+  }
   .site-nav__link ion-icon {
     cursor: pointer;
   }
@@ -541,7 +545,7 @@
     margin-left: 8px;
   }
   .search_input_wrap {
-    width:  80%;
+    width: 80%;
     height: 100%;
     display: flex;
     position: relative;

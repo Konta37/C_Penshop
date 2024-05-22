@@ -305,3 +305,14 @@ function dropDownList() {
     closeForm();
     return;
   }
+
+  // check profileChange
+  function profileChange(){
+    let userLogin = JSON.parse(localStorage.getItem("user_login")) ||[];
+    if (!userLogin) {
+      window.location.href ="../../login.html";
+    }
+    else{
+      window.location.href ="../../user/pages/profile.html";
+    }
+  }

@@ -53,16 +53,31 @@ form.onsubmit = function(e){
   }
 
   const userFind =userList.find(item => item.email === userForm.email && item.password ===userForm.password)
+  let userIdIndex = userList.findIndex(item=>item.email===userForm.email);
   // console.log(user);
   if(!userFind){
-    alert("Khong tim thay");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Your account had been lock! Please call police to open",
+    });
+    return;
+  }
+  if(userList[userIdIndex].status === true){
+    window.location.href = "./index.html";
+    //lưu thông tin lên local
+    localStorage.setItem("user_login", JSON.stringify(userFind));
+  }
+  else{
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Your account had been lock! Please call police to open",
+    });
     return;
   }
   //tìm thấy
-  //lưu thông tin lên local
-  localStorage.setItem("user_login", JSON.stringify(userFind));
   //chuyển trang
-  window.location.href = "./index.html";
 }
 let checkMenu = document.getElementById("check");
 let btnMenu = document.getElementById("btnMenu");

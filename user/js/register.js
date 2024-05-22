@@ -135,6 +135,8 @@ form.onsubmit = function (e) {
     });
     if (!user){
       let id =1;
+      let status = true;
+      let role = "user";
       if (userList.length >0){
         id = userList[userList.length - 1].id + 1;
       }
@@ -146,6 +148,8 @@ form.onsubmit = function (e) {
         gender: gender,
         dateofBirth: userdate,
         phone: userphone,
+        status: status,
+        role:role,
       };
       userList.push(newUser);
       localStorage.setItem("userList", JSON.stringify(userList));

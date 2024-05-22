@@ -37,7 +37,7 @@ let idUpdate = null;
 //Call element from form
 // const prdId = document.getElementById('id')
 const prdName = document.getElementById('nameAdd');
-const prdType = document.getElementById('productType');
+const prdType = document.getElementById('productRealName');
 const prdGender = document.getElementById('gender');
 const prdCode = document.getElementById('productCode');
 const prdSize = document.getElementById('productSize');
@@ -103,7 +103,7 @@ function renderProducts(products) {
                     </td>
                     <td>${products[i].name}</td>
                     <td>${products[i].gender}</td>
-                    <td>${products[i].productType}</td>
+                    <td>${products[i].productRealName}</td>
                     <td>${products[i].productSize}</td>
                     <td>${products[i].productColor}</td>
                     <td>${products[i].quantity}</td>
@@ -299,7 +299,7 @@ function initUpdate(id){
 
   // prdId.value = realProducts[index].id;
   prdName.value = realProducts[index].name;
-  prdType.value = realProducts[index].productType;
+  prdType.value = realProducts[index].productRealName;
   prdSize.value = realProducts[index].productSize;
   prdColor.value = realProducts[index].productColor;
   prdCode.value = realProducts[index].productCode;
@@ -312,16 +312,6 @@ function initUpdate(id){
   buttonUpdateForm.classList.remove(`hidden`);
   buttonSubmitForm.classList.add(`hidden`)
 
-  //B1: ấy thông tin sản phẩm từ id
-  // let index = products.findIndex(product => product.id === id)
-
-  // //B2: Hiển thị dữ liệu cần cập nhật lên form
-  // productID.value = products[index].id;
-  // ...
-  //B3: đổi button add thành update
-  //btn
-  //B4: không cho phép sửa mã sản phẩm(id)
-  //B5: chuyển sang update
 }
 
 
@@ -330,7 +320,6 @@ function getIndexById(id){
   return realProducts.findIndex(product=> product.id ==id);
 }
 function getDataForm(){
-  console.log(imgProducthiddenHTML.src);
   return {
     // id: prdId.value,
     name: prdName.value,
@@ -398,7 +387,7 @@ function renderCategoryAdd(){
   for (let i = 0; i < categorys.length; i++) {
     if (categorys[i].status) {
       stringHTML += `
-      <option value="${categorys[i].id}">${categorys[i].name}</option>
+      <option value="${categorys[i].name}">${categorys[i].name}</option>
       `
     }
   }
