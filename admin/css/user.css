@@ -446,6 +446,9 @@
   td {
       border: 1px solid;
   }
+  td{
+    padding-left: 8px;
+  }
   
   .page-item {
     display: inline-block;

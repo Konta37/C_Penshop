@@ -22,7 +22,7 @@ let totalPage = 1;
 let currentPage = 1;
 
 let textSearch = "";
-let categoryFilter = "All";
+let sortBy = "All";
 
 let action = "create";
 
@@ -35,10 +35,30 @@ function closeForm() {
 function render() {
   let userLists = JSON.parse(localStorage.getItem(PRODUCTS)) || [];
 
-  //lọc theo category
-  if (categoryFilter !== "All") {
+  if (sortBy == "aToZ") {
+    userLists= userLists.sort(function(a,b){
+      var x =a.name.toLowerCase();
+      var y =b.name.toLowerCase();
+      return x < y ? -1 : x > y ? 1 : 0;
+    })
+  }
+  else if(sortBy=="zToA"){
+    userLists= userLists.sort(function(a,b){
+      var x =a.name.toLowerCase();
+      var y =b.name.toLowerCase();
+      return x > y ? -1 : x < y ? 0 : 1;
+    })
+  }
+  else if(sortBy =="STTAscending"){
+    userLists = userLists.sort();
+  }
+  else if(sortBy =="STTDescending"){
+    userLists = userLists.reverse();
+  }
+  //lọc theo gender
+  else if (sortBy !== "All") {
     userLists = userLists.filter(
-      (product) => product.gender === categoryFilter
+      (product) => product.gender === sortBy
     );
   }
   //lọc theo search (vdu search sam thi hien spham samsung)
@@ -60,7 +80,21 @@ function renderProducts(user) {
     end = user.length;
   }
   for (let i = start; i < end; i++) {
-    stringHTML += `
+    if (user[i].email=="admin@gmail.com"){
+      stringHTML += `
+                  <tr>
+                      <td>${user[i].id}</td>
+                      <td>${user[i].name}</td>
+                      <td>${user[i].email}</td>
+                      <td>xxxxxxxxxxxx</td>
+                      <td>xxxxxxxxxxxx</td>
+                      <td>xxxxxxxxxxxx</td>
+                      <td>${user[i].status}</td>
+                      <td>Can't do anything</td>
+                  </tr>
+              `;
+    } else{
+      stringHTML += `
                   <tr>
                       <td>${user[i].id}</td>
                       <td>${user[i].name}</td>
@@ -76,6 +110,7 @@ function renderProducts(user) {
                       </td>
                   </tr>
               `;
+    }
   }
   tbodyHTML.innerHTML = stringHTML;
 }
@@ -122,7 +157,7 @@ function changePageSize(e) {
 //hiện thay đổi theo cate
 function changeCategory(e) {
   // console.log(e.target.value);
-  categoryFilter = e.target.value;
+  sortBy = e.target.value;
   currentPage = 1;
   render();
 }
@@ -133,8 +168,8 @@ function changeTextSearch(e) {
   textSearch = document.getElementById("search").value.toLowerCase();
   currentPage = 1;
   const userLists = JSON.parse(localStorage.getItem(PRODUCTS));
-  const categoryFilter = userLists.filter(item => item.name.toLowerCase().includes(textSearch));
-  render(categoryFilter)
+  const sortBy = userLists.filter(item => item.name.toLowerCase().includes(textSearch));
+  render(sortBy)
 }
 
 //chuyển trạng thái status
