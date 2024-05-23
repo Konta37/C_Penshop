@@ -391,7 +391,13 @@
     text-decoration: none;
     text-align: left;
   }
-  
+  .btn-auth{
+    display: block;
+    margin-bottom: 24px;
+  }
+  .btn{
+    padding: 16px;
+  }
 
 
   

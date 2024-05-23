@@ -94,6 +94,7 @@ function renderProducts(user) {
                   </tr>
               `;
     } else{
+      let index = getIndexById(user[i].id)
       stringHTML += `
                   <tr>
                       <td>${user[i].id}</td>
@@ -104,9 +105,9 @@ function renderProducts(user) {
                       <td>${user[i].dateofBirth}</td>
                       <td>${user[i].status}</td>
                       <td>
-                        <button onClick="changeStatus(${i})" class="btn-status">${
-                          user[i].status ? "Block" : "Active"
-                      }</button>
+                      <button onClick="changeStatus(${index})" class="btn-status">${
+                        user[i].status ? "Block" : "Active"
+                    }</button>
                       </td>
                   </tr>
               `;
